@@ -1,4 +1,4 @@
-describe("Rock-Paper-Scissors", function() {
+describe("Rock-Paper-Scissors::", function() {
   var player1, player2, game;
 
   beforeEach(function() {
@@ -7,7 +7,7 @@ describe("Rock-Paper-Scissors", function() {
     game = new Game(player1, player2);
   });
 
-  describe('winning and losing', function() {
+  describe('winning and losing:', function() {
 
     describe('rock', function() {
 
