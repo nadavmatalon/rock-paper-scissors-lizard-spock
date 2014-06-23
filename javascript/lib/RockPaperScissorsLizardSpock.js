@@ -12,92 +12,32 @@ function Game(player1, player2) {
   this.player2 = player2;
 };
 
-
 Game.prototype._isSamePick = function() {
 	return this.player1.pick === this.player2.pick;
 };
 
-Game.prototype.winner = function() {
-
-	if (this._isSamePick()) return null;
-	
-	switch(this.player1.pick) {
-    case ("rock"):
-    	if (this.player2.pick === "scissors" || this.player2.pick === "lizard") {
-    		return this.player1;
-    	} else {
-    		return this.player2;
-    	}
-        break;
-    case ("paper"):
-   		if (this.player2.pick === "rock" || this.player2.pick === "spock") {
-    		return this.player1;
-    	} else {
-    		return this.player2;
-    	}        break;
-    case ("scissors"):
-   		if (this.player2.pick === "paper" || this.player2.pick === "lizard") {
-    		return this.player1;
-    	} else {
-    		return this.player2;
-    	}    
-    case ("lizard"):
-   		if (this.player2.pick === "paper" || this.player2.pick === "spock") {
-    		return this.player1;
-    	} else {
-    		return this.player2;
-    	}    
-    case ("spock"):
-  	 	if (this.player2.pick === "rock" || this.player2.pick === "scissors") {
-    		return this.player1;
-    	} else {
-    		return this.player2;
-    	}    
-	}
-
-	// if (this.player1.pick === "rock" && this.player2.pick === "paper") {
-	// 	return this.player2;
-	// } else if (this.player1.pick === "rock" && this.player2.pick === "scissors") {
-	// 	return this.player1;
-	// } else if (this.player1.pick === "rock" && this.player2.pick === "lizard") {
-	// 	return this.player1;
-	// } else if (this.player1.pick === "rock" && this.player2.pick === "spock") {
-	// 	return this.player2;
-	// } else if (this.player1.pick === "paper" && this.player2.pick === "rock") {
-	// 	return this.player1;
-	// } else if (this.player1.pick === "paper" && this.player2.pick === "scissors") {
-	// 	return this.player2;
-	// } else if (this.player1.pick === "paper" && this.player2.pick === "lizard") {
-	// 	return this.player2;
-	// } else if (this.player1.pick === "paper" && this.player2.pick === "spock") {
-	// 	return this.player1;
-	// } else if (this.player1.pick === "scissors" && this.player2.pick === "rock") {
-	// 	return this.player2;
-	// } else if (this.player1.pick === "scissors" && this.player2.pick === "paper") {
-	// 	return this.player1;
-	// } else if (this.player1.pick === "scissors" && this.player2.pick === "lizard") {
-	// 	return this.player1;
-	// } else if (this.player1.pick === "scissors" && this.player2.pick === "spock") {
-	// 	return this.player2;
-	// } else if (this.player1.pick === "lizard" && this.player2.pick === "rock") {
-	// 	return this.player2;
-	// } else if (this.player1.pick === "lizard" && this.player2.pick === "paper") {
-	// 	return this.player1;
-	// } else if (this.player1.pick === "lizard" && this.player2.pick === "scissors") {
-	// 	return this.player2;
-	// } else if (this.player1.pick === "lizard" && this.player2.pick === "spock") {
-	// 	return this.player1;
-	// } else if (this.player1.pick === "spock" && this.player2.pick === "rock") {
-	// 	return this.player1;
-	// } else if (this.player1.pick === "spock" && this.player2.pick === "paper") {
-	// 	return this.player2;
-	// } else if (this.player1.pick === "spock" && this.player2.pick === "scissors") {
-	// 	return this.player1;
-	// } else if (this.player1.pick === "spock" && this.player2.pick === "lizard") {
-	// 	return this.player2;
-	// } else {
-
-	// }
-
+Game.prototype.PAIRS = {
+	rock: {beats: 'scissors, lizard'},
+	paper: {beats: 'rock, spock'},
+	scissors: {beats: 'paper, lizard'},
+	lizard: {beats: 'paper, spock'},
+	spock: {beats: 'scissors, rock'}
 };
+
+
+Game.prototype.winner = function() {
+	if (this._isSamePick()) return null;
+	return (this.PAIRS[this.player1.pick]['beats'].search(this.player2.pick) == -1) ? this.player2 : this.player1;
+};
+
+// Game.prototype.winner = function() {
+
+// 	if (this._isSamePick()) return null;
+// 	switch(this.player1.pick) {
+//     	case ("rock"): return ((this.player2.pick === "scissors") || (this.player2.pick === "lizard")) ? (this.player1) : (this.player2); break;
+//     	case ("paper"): return ((this.player2.pick === "rock") || (this.player2.pick === "spock")) ? (this.player1) : (this.player2); break;
+//     	case ("scissors"): return ((this.player2.pick === "paper") || (this.player2.pick === "lizard")) ? (this.player1) : (this.player2); break;    
+//     	case ("lizard"): return ((this.player2.pick === "paper") || (this.player2.pick === "spock")) ? (this.player1) : (this.player2); break;
+//     	case ("spock"): return ((this.player2.pick === "rock") || (this.player2.pick === "scissors")) ? (this.player1) : (this.player2); break;}
+// };
 
