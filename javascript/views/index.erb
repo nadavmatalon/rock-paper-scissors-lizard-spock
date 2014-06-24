@@ -48,7 +48,7 @@
 		        p2.picks($(this).data('pick'));
          		console.log("p2 picked:" + p2.pick);
   		   		$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
-        		$('li:gt(2)').fadeOut(function(){
+        		$('li:gt(3)').fadeOut(function(){
             		$(this).remove();
             	});
             	console.log(game.winningMessage());
