@@ -23,15 +23,10 @@ Game.prototype._isSamePick = function() {
 };
 
 Game.prototype.winner = function() {
-
-	if (this._isSamePick()) return null;
-	
+	if (this._isSamePick()) return null;	
 	if (this.PAIRS[this.player1.pick]['beats'] === this.player2.pick) {
-
 		return this.player1;
-
 	} else {
-
 		return this.player2;
 	}
 
