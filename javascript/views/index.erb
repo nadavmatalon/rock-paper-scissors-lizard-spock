@@ -21,13 +21,12 @@
         var p1 = new Player('John');
         var p2 = new Player('Jane');
         var game = new Game(p1, p2)
-        var index = 0;
+        p1.pick = null;
 
         $('.choices img').on('click', function() {
-        	if (index === 0) {
+        	if (p1.pick === null) {
          		p1.picks($(this).data('pick'));
          		console.log("p1 picked:" + p1.pick);
-         		index = 1;
          	} else {
 		        p2.picks($(this).data('pick'));
          		console.log("p2 picked:" + p2.pick);
@@ -38,7 +37,6 @@
             	console.log(game.winningMessage());
             	p1.pick = null;
             	p2.pick = null;
-            	index = 0;
 			};       
        	});
       });
