@@ -210,5 +210,118 @@ describe("Rock-Paper-Scissors::", function() {
 
   });
 
+  describe('winners message', function() {
+
+    describe('should say', function() {
+
+      it('winners name', function() {
+
+        player1.picks('rock');
+        player2.picks('scissors');
+        expect(game.winnerName()).toEqual(player1.name);
+        player1.picks('scissors');
+        player2.picks('rock');
+        expect(game.winnerName()).toEqual(player2.name);
+      });
+
+      it('losers name', function() {
+
+        player1.picks('rock');
+        player2.picks('scissors');
+        expect(game.loserName()).toEqual(player2.name);
+        player1.picks('scissors');
+        player2.picks('rock');
+        expect(game.loserName()).toEqual(player1.name);
+      });
+
+      it("'draw' if no player wins", function() {
+        player1.picks('rock');
+        player2.picks('rock');
+        expect(game.isDraw()).toEqual('draw');
+      });
+
+
+      it("correct key word for winner\'s choice", function() {
+        player1.picks('rock');
+        player2.picks('scissors');
+        expect(game.messageVerb()).toEqual('crushes');
+      });
+
+      it("correct key word for winner\'s choice", function() {
+        player1.picks('rock');
+        player2.picks('lizard');
+        expect(game.messageVerb()).toEqual('crushes');
+      });
+
+       it("correct key word for winner\'s choice", function() {
+        player1.picks('paper');
+        player2.picks('scissors');
+        expect(game.messageVerb()).toEqual('cuts');
+      });
+
+       it("correct key word for winner\'s choice", function() {
+        player1.picks('scissors');
+        player2.picks('lizard');
+        expect(game.messageVerb()).toEqual('decapitates');
+      });
+
+       it("correct key word for winner\'s choice", function() {
+        player1.picks('spock');
+        player2.picks('scissors');
+        expect(game.messageVerb()).toEqual('smashes');
+      });
+
+       it("correct key word for winner\'s choice", function() {
+        player1.picks('spock');
+        player2.picks('rock');
+        expect(game.messageVerb()).toEqual('vapourises');
+      });
+
+       it("correct key word for winner\'s choice", function() {
+        player1.picks('lizard');
+        player2.picks('spock');
+        expect(game.messageVerb()).toEqual('poisons');
+      });
+//wwwwwwwww
+       it("correct key word for winner\'s choice", function() {
+        player1.picks('lizard');
+        player2.picks('paper');
+        expect(game.messageVerb()).toEqual('eats');
+      });
+
+       it("correct key word for winner\'s choice", function() {
+        player1.picks('paper');
+        player2.picks('spock');
+        expect(game.messageVerb()).toEqual('disproves');
+      });
+
+       it("correct key word for winner\'s choice", function() {
+        player1.picks('paper');
+        player2.picks('rock');
+        expect(game.messageVerb()).toEqual('covers');
+      });
+    
+       it("winner name, then correct verb, then loser name", function() {
+        player1.picks('paper');
+        player2.picks('rock');
+        expect(game.winningMessage()).toEqual("Alex covers Bob");
+       });
+
+       it("winner name, then correct verb, then loser name", function() {
+        player1.picks('spock');
+        player2.picks('scissors');
+        expect(game.winningMessage()).toEqual("Alex smashes Bob");
+       });
+
+       it("winner name, then correct verb, then loser name", function() {
+        player1.picks('spock');
+        player2.picks('lizard');
+        expect(game.winningMessage()).toEqual("Bob poisons Alex");
+       });
+    });
+
+  });
+
+
 });
 
