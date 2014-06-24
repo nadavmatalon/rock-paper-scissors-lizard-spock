@@ -12,6 +12,10 @@ function Game(player1, player2) {
   this.player2 = player2;
 };
 
+Player.prototype.pick = function() {
+	this.pick;
+}
+
 Game.prototype.PAIRS = {
 	rock: {beats: ['scissors', 'lizard']},
 	paper: {beats: ['rock', 'spock']},
@@ -88,6 +92,7 @@ Game.prototype.loserPick = function(selection) {
 
 
 Game.prototype.winningMessage = function() {
+  if (this.isDraw()) return "Draw";
   var message = [this.winnerName(), this.messageVerb(), this.loserName()];
   return message.join(" ");
 };

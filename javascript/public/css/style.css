@@ -4,6 +4,36 @@ body {
 }
 
 h1 {
-	font-family: "Arial";
-	font-size: "35px";
+	text-align: center;
 }
+
+.choices img {
+	width: 15%;
+	margin-right: 2.5%;
+	opacity: 0.5;
+	transition: 1s opacity;
+	}
+
+.choices img:hover {
+	cursor: pointer;
+	opacity: 1;
+	}
+
+#results {
+	list-style: none;
+	}
+
+#results li {
+	background: #999;
+	color: #fff;
+	text-align: center;
+	font-size: 24px;
+	border-radius: 8px;
+	padding: 5px;
+	width: 30%;
+	margin-right: 30%;
+	margin-left: 30%;
+	margin-bottom: 1%;
+	display: none;
+}
+

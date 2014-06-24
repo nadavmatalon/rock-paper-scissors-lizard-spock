@@ -1,20 +1,47 @@
-
-<!DOCTYPE html>
+<!doctype>
 <html>
-	<head>
-		<title>Rock Paper Scissors</title>
-		<link href="./css/style.css" rel="stylesheet">		
-	</head>
-	<body>
-		
-			<img src="/images/rock.png">
-			<img src="/images/paper.png">
-			<img src="/images/scissors.png">
-			<img src="/images/lizard.png">
-			<img src="/images/spock.png">
-
+  <head>
+    <title>Rock Paper Scissors Lizard Spock</title>
+    <link href="./css/style.css" rel="stylesheet">		
+  </head>
+  <body>
+    <h1>Rock Paper Scissors Lizard Spock</h1>
+    <div class='choices'>
+      <img src="images/rock.png" data-pick='rock'>
+      <img src="images/paper.png" data-pick='paper'>
+      <img src="images/scissors.png" data-pick='scissors'>
+      <img src="images/lizard.png" data-pick='lizard'>
+      <img src="images/spock.png" data-pick='spock'>
+    </div>
+    <ul id='results'></ul>
 		<script src='lib/RockPaperScissorsLizardSpock.js'></script>
 		<script src='lib/jquery-2.1.1.min.js'></script>
+    <script>
+      $(document).ready(function(){
+        var p1 = new Player('John');
+        var p2 = new Player('Jane');
+        var game = new Game(p1, p2)
+        var index = 0;
 
-	</body>
+        $('.choices img').on('click', function() {
+        	if (index === 0) {
+         		p1.picks($(this).data('pick'));
+         		console.log("p1 picked:" + p1.pick);
+         		index = 1;
+         	} else {
+		        p2.picks($(this).data('pick'));
+         		console.log("p2 picked:" + p2.pick);
+  		   		$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
+        		$('li:gt(2)').fadeOut(function(){
+            		$(this).remove();
+            	});
+            	console.log(game.winningMessage());
+            	p1.pick = null;
+            	p2.pick = null;
+            	index = 0;
+			};       
+       	});
+      });
+    </script>
+  </body>
 </html>
