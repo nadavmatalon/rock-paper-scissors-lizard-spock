@@ -38,13 +38,9 @@ input {
 
 .choices img {
 	width: 12%;
-	opacity: 0.5;
-	transition: 1s opacity;
 	}
 
 .choices img:hover {
-	/*cursor: pointer;*/
-	opacity: 1;
 	}
 
 .submit_name_button {

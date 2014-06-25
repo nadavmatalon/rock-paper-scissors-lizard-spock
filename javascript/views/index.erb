@@ -18,7 +18,7 @@
     		<button type="button" class="one_or_two_button" id="two_players">Two Players</button>
     	</div>
     	<div>
-    		<input type="text" class="player_name" id="player1_name"></input>
+    		<input type="text" class="player_name" id="player1_name"></input>  
     		<input type="text" class="player_name" id="player2_name"></input>
     	</div>
     	<div>
@@ -39,9 +39,17 @@
     			$('#one_player').on('click', function() {
     				$('.one_or_two_button').fadeOut();
     				$('#player1_name').slideDown();
-    				$('#submit_1').fadeIn();
-	   				player_vs_computer();
-	   			});
+            $('#submit_1').on('click', function(){
+  	   			   player_vs_computer();
+               $('.choices img').hover(function() { 
+                    $(this).stop().animate({"opacity": 1},30); 
+                },function() { 
+                    $(this).stop().animate({"opacity": 0.5},30); 
+                });  
+
+            });
+            $('#submit_1').fadeIn();
+  	   		});
 
 	  			$('#two_players').on('click', function() {
 	  				$('.one_or_two_button').fadeOut();
@@ -51,45 +59,46 @@
     				$('#submit_2').fadeIn();
 	   				player_vs_player();
 	   			});
-    				
- 
-   			function player_vs_player() {
-	   			$('.choices img').on('click', function() {
-	   				if (p1.pick === null) {
-	   					p1.picks($(this).data('pick'));
-	   					console.log("p1 picked:" + p1.pick);
-	   				} else {
-	   					p2.picks($(this).data('pick'));
-	   					console.log("p2 picked:" + p2.pick);
-	   					$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
-	   					$('li:gt(2)').fadeOut(function(){
-	   						$(this).remove();
-	   					});
-	   				console.log(game.winningMessage());
-	   				p1.pick = null;
-	   				p2.pick = null;
-	   				};       
-	   			});
-    		};
 
-   			function player_vs_computer() {
-	    		$('.choices img').on('click', function() {
-	    			choices = ["rock", "paper", "scissors", "lizard", "spock"]
-	    			p1.picks(choices[Math.floor(Math.random() * choices.length)]);
-	    			console.log("p1 picked:" + p1.pick);
-	    			p2.picks($(this).data('pick'));
-	    			console.log("p2 picked:" + p2.pick);
-	    			$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
-	    			$('li:gt(3)').fadeOut(function(){
-	    				$(this).remove();
-	    			});
-	    			console.log(game.winningMessage());
-	    			p1.pick = null;
-	    			p2.pick = null;
-	    		});
-    		};
-    	});
+
+     			function player_vs_computer() {
+  	    		$('.choices img').on('click', function() {
+              		p1.name = $('#player1_name').val();
+  	    			choices = ["rock", "paper", "scissors", "lizard", "spock"]
+  	    			p1.picks(choices[Math.floor(Math.random() * choices.length)]);
+  	    			console.log("p1 picked:" + p1.pick);
+  	    			p2.picks($(this).data('pick'));
+  	    			console.log("p2 picked:" + p2.pick);
+  	    			$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
+  	    			$('li:gt(3)').fadeOut(function(){
+  	    				$(this).remove();
+  	    			});
+  	    			console.log(game.winningMessage());
+  	    			p1.pick = null;
+  	    			p2.pick = null;
+  	    		});
+      		};
+
+          function player_vs_player() {
+            $('.choices img').on('click', function() {
+              if (p1.pick === null) {
+                p1.picks($(this).data('pick'));
+                console.log("p1 picked:" + p1.pick);
+              } else {
+                p2.picks($(this).data('pick'));
+                console.log("p2 picked:" + p2.pick);
+                $('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
+                $('li:gt(2)').fadeOut(function(){
+                  $(this).remove();
+                });
+              console.log(game.winningMessage());
+              p1.pick = null;
+              p2.pick = null;
+              };       
+            });
+          };
+
+    	 });
 		</script>
 	</body>
 </html>
-

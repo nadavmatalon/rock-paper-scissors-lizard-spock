@@ -10,11 +10,3 @@ get "/" do
 	erb :index
 
 end
-
-
-post "/button_clicked" do
-	session[:message]="hello again"
-	erb :index
-
-end
-
