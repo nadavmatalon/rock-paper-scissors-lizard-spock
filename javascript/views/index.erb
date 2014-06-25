@@ -13,6 +13,18 @@
     		<img src="images/lizard.png" data-pick='lizard'>
     		<img src="images/spock.png" data-pick='spock'>
     	</div>
+    	<div>
+    		<button type="button" class="one_or_two_button" id="one_player">One Player</button>
+    		<button type="button" class="one_or_two_button" id="two_players">Two Players</button>
+    	</div>
+    	<div>
+    		<input type="text" class="player_name" id="player1_name"></input>
+    		<input type="text" class="player_name" id="player2_name"></input>
+    	</div>
+    	<div>
+    		<button type="button" class="submit_name_button" id="submit_1">Submit</button>
+    		<button type="button" class="submit_name_button" id="submit_2">Sumbit</button>
+    	</div>
     	<ul id='results'></ul>
     	<script src='lib/RockPaperScissorsLizardSpock.js'></script>
     	<script src='lib/jquery-2.1.1.min.js'></script>
@@ -20,41 +32,62 @@
     		$(document).ready(function(){
     			var p1 = new Player('John');
     			var p2 = new Player('Jane');
-    			var game = new Game(p1, p2)
+    			var game = new Game(p1, p2);
     			var rand = null;
     			p1.pick = null;
 
-   //			$('.choices img').on('click', function() {
-   //				if (p1.pick === null) {
-   //					p1.picks($(this).data('pick'));
-   //					console.log("p1 picked:" + p1.pick);
-   //				} else {
-   //					p2.picks($(this).data('pick'));
-   //					console.log("p2 picked:" + p2.pick);
-   //					$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
-   //					$('li:gt(2)').fadeOut(function(){
-   //						$(this).remove();
-   //					});
-   //				console.log(game.winningMessage());
-   //				p1.pick = null;
-   //				p2.pick = null;
-   //				};       
-   //			});
+    			$('#one_player').on('click', function() {
+    				$('.one_or_two_button').fadeOut();
+    				$('#player1_name').slideDown();
+    				$('#submit_1').fadeIn();
+	   				player_vs_computer();
+	   			});
 
-    		$('.choices img').on('click', function() {
-    			choices = ["rock", "paper", "scissors", "lizard", "spock"]
-    			p1.picks(choices[Math.floor(Math.random() * choices.length)]);
-    			console.log("p1 picked:" + p1.pick);
-    			p2.picks($(this).data('pick'));
-    			console.log("p2 picked:" + p2.pick);
-    			$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
-    			$('li:gt(3)').fadeOut(function(){
-    				$(this).remove();
-    			});
-    			console.log(game.winningMessage());
-    			p1.pick = null;
-    			p2.pick = null;
-    		});
+	  			$('#two_players').on('click', function() {
+	  				$('.one_or_two_button').fadeOut();
+	   				$('#player1_name').slideDown();
+	   				$('#player2_name').slideDown();
+	   				$('#submit_1').fadeIn();
+    				$('#submit_2').fadeIn();
+	   				player_vs_player();
+	   			});
+    				
+ 
+   			function player_vs_player() {
+	   			$('.choices img').on('click', function() {
+	   				if (p1.pick === null) {
+	   					p1.picks($(this).data('pick'));
+	   					console.log("p1 picked:" + p1.pick);
+	   				} else {
+	   					p2.picks($(this).data('pick'));
+	   					console.log("p2 picked:" + p2.pick);
+	   					$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
+	   					$('li:gt(2)').fadeOut(function(){
+	   						$(this).remove();
+	   					});
+	   				console.log(game.winningMessage());
+	   				p1.pick = null;
+	   				p2.pick = null;
+	   				};       
+	   			});
+    		};
+
+   			function player_vs_computer() {
+	    		$('.choices img').on('click', function() {
+	    			choices = ["rock", "paper", "scissors", "lizard", "spock"]
+	    			p1.picks(choices[Math.floor(Math.random() * choices.length)]);
+	    			console.log("p1 picked:" + p1.pick);
+	    			p2.picks($(this).data('pick'));
+	    			console.log("p2 picked:" + p2.pick);
+	    			$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
+	    			$('li:gt(3)').fadeOut(function(){
+	    				$(this).remove();
+	    			});
+	    			console.log(game.winningMessage());
+	    			p1.pick = null;
+	    			p2.pick = null;
+	    		});
+    		};
     	});
 		</script>
 	</body>
