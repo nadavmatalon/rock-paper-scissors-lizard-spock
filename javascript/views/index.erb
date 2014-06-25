@@ -5,27 +5,100 @@
 		<link href="./css/style.css" rel="stylesheet">
     </head>
     <body>
-    	<h1>Rock Paper Scissors Lizard Spock</h1>
-    	<div class='choices'>
-    		<img src="images/rock.png" data-pick='rock'>
-    		<img src="images/paper.png" data-pick='paper'>
-    		<img src="images/scissors.png" data-pick='scissors'>
-    		<img src="images/lizard.png" data-pick='lizard'>
-    		<img src="images/spock.png" data-pick='spock'>
-    	</div>
-    	<div>
-    		<button type="button" class="one_or_two_button" id="one_player">One Player</button>
-    		<button type="button" class="one_or_two_button" id="two_players">Two Players</button>
-    	</div>
-    	<div>
-    		<input type="text" class="player_name" id="player1_name"></input>  
-    		<input type="text" class="player_name" id="player2_name"></input>
-    	</div>
-    	<div>
-    		<button type="button" class="submit_name_button" id="submit_1">Submit</button>
-    		<button type="button" class="submit_name_button" id="submit_2">Sumbit</button>
-    	</div>
-    	<ul id='results'></ul>
+    	<table class="framework" border="1px" padding="20px" valign="center">
+    		<tr>
+    			<td width=15%>
+    			</td>
+    			<td width=70%>
+    			    <h1>Rock Paper Scissors Lizard Spock</h1>
+    			</td width=15%>
+    			<td>
+    			</td>
+    		</tr>
+    		<tr>
+    		 	<td width=15%>
+    			</td>
+    			<td width=70%>
+    				<table class='choices' border="1px" width=100%>
+    					<tr>
+	    					<td align="center">
+	    						<img src="images/rock.png" data-pick='rock'>
+	    					</td>
+	    					<td align="center">
+	 	 	     				<img src="images/paper.png" data-pick='paper'>					
+	    					</td>
+	    					<td align="center">
+								<img src="images/scissors.png" data-pick='scissors'>
+	      					</td>
+	      					<td align="center">
+			    				<img src="images/lizard.png" data-pick='lizard'>
+	      					</td>
+	      					<td align="center">
+	    						<img src="images/spock.png" data-pick='spock'>
+	      					</td>
+    					</tr>
+    				</table>
+       			</td>
+       			<td width=15%>
+    			</td>
+    		</tr>
+    		<tr height="40px" style="valign: center;" padding="100px">
+ 				<td width=15%>
+    			</td>
+    			<td width=70% align="center"> 
+    				<h3 id="message"></h3>
+    			</td>
+    			<td width=15%>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td width=15%>
+    			</td>
+  	 			<td width=70%>
+  	 				<table class="buttons" height="40px" border="1px" width=100%>
+  	 					<tr>
+				 			<td align="center">
+			    				<button type="button" class="one_or_two_button" id="one_player">One Player</button>
+			    				<p><input type="text" class="player_name" id="player1_name" required="true" autofocus></input> <p> 
+			    			</td>
+			    			<td align="center">
+			    				<button type="button" class="one_or_two_button" id="two_players">Two Players</button>  	
+			    				<input type="text" class="player_name" id="player2_name" required></input>
+			    			</td>
+  	 					</tr>
+  	 				</table>
+    			</td>
+    			<td width=15%>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td width=15%>
+    			</td>
+    			<td width=70%>
+   	 				<table class="buttons" height="40px" border="1px" width=100%>
+  	 					<tr>
+				 			<td align="center">
+			    			  	<button type="button" class="submit_name_button" id="submit_1">Submit</button>
+			    			</td>
+			    			<td align="center">
+			    				<button type="button" class="submit_name_button" id="submit_2">Sumbit</button>
+			    			</td>
+  	 					</tr>
+  	 				</table>
+	 			</td>
+	 			<td width=15%>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td width=15%>
+    			</td>
+    			<td width=70% align="center">
+			    	<ul id='results'></ul>
+	 			</td>
+	 			<td>
+    			</td>
+    		</tr>
+    	</table>
     	<script src='lib/RockPaperScissorsLizardSpock.js'></script>
     	<script src='lib/jquery-2.1.1.min.js'></script>
     	<script>
@@ -33,69 +106,111 @@
     			var p1 = new Player('John');
     			var p2 = new Player('Jane');
     			var game = new Game(p1, p2);
+    			$(message = message("Welcome, please select number of players"));
     			var rand = null;
     			p1.pick = null;
+    			$('<h3>' + message + '</h3>').prependTo('#message');
+    			selectNumberOfPlayers();
 
-    			$('#one_player').on('click', function() {
-    				$('.one_or_two_button').fadeOut();
-    				$('#player1_name').slideDown();
-            		$('#submit_1').on('click', function(){
-  	   			   		player_vs_computer();
-               			$('.choices img').hover(function() { 
-                    		$(this).stop().animate({"opacity": 1},30); 
-                		},function() { 
-                    		$(this).stop().animate({"opacity": 0.5},30); 
-                	});  
-            	});
-            	$('#submit_1').fadeIn();
-  	   			});
+    			function message(content) {
+    				return content;
+    			}
 
-	  			$('#two_players').on('click', function() {
-	  				$('.one_or_two_button').fadeOut();
-	   				$('#player1_name').slideDown();
-	   				$('#player2_name').slideDown();
-	   				$('#submit_1').fadeIn();
-    				$('#submit_2').fadeIn();
-	   				player_vs_player();
-	   			});
+    			function selectNumberOfPlayers() {
+    				$('#one_player').on('click', function() {
+    					$('.one_or_two_button').fadeOut();
+    					$('#player1_name').fadeIn();
+    					$('#submit_1').fadeIn();
+    					$('#submit_1').on('click', function(){
+    						if ($('#player1_name').val() != "") {
+	   							p1.name = $('#player1_name').val();
+    							$('#player1_name').fadeOut();
+    							$('#submit_1').fadeOut();
+    							PlayerVsComputerGame();
+    						} else {
+    							message = ("Sorry, name cannot be empty");
+				    			$('<h3>' + message + '</h3>').prependTo('#message');
 
+    						};
+    					});
+    				});
+    			};
 
-     			function player_vs_computer() {
-  	    			$('.choices img').on('click', function() {
-	              		p1.name = $('#player1_name').val();
-	  	    			choices = ["rock", "paper", "scissors", "lizard", "spock"]
-	  	    			p1.picks(choices[Math.floor(Math.random() * choices.length)]);
+    			function PlayerVsComputerGame() {
+					$('.choices img').on('click', function() {
+						choices = ["rock", "paper", "scissors", "lizard", "spock"]
+						p1.picks(choices[Math.floor(Math.random() * choices.length)]);
 	  	    			console.log("p1 picked:" + p1.pick);
 	  	    			p2.picks($(this).data('pick'));
 	  	    			console.log("p2 picked:" + p2.pick);
-	  	    			$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
-	  	    			$('li:gt(3)').fadeOut(function(){
-	  	    				$(this).remove();
-	  	    			});
-	  	    			console.log(game.winningMessage());
-	  	    			p1.pick = null;
-	  	    			p2.pick = null;
-	  	    		});
-	      		};
+					});
+    			};
 
-          		function player_vs_player() {
-            		$('.choices img').on('click', function() {
-              			if (p1.pick === null) {
-              				p1.picks($(this).data('pick'));
-              				console.log("p1 picked:" + p1.pick);
-              			} else {
-              				p2.picks($(this).data('pick'));
-              				console.log("p2 picked:" + p2.pick);
-              				$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
-              				$('li:gt(2)').fadeOut(function(){
-              					$(this).remove();
-              				});
-              				console.log(game.winningMessage());
-              				p1.pick = null;
-              				p2.pick = null;
-              			};
-              		});
-            	};
+
+
+
+
+
+    		// 	$('#one_player').on('click', function() {
+    		// 		$('.one_or_two_button').fadeOut();
+    		// 		$('#player1_name').slideDown();
+      //       		$('#submit_1').on('click', function(){
+  	   // 			   		player_vs_computer();
+      //          			$('.choices img').hover(function() { 
+      //               		$(this).stop().animate({"opacity": 1},30); 
+      //           		},function() { 
+      //               		$(this).stop().animate({"opacity": 0.5},30); 
+      //           	});  
+      //       	});
+      //       	$('#submit_1').fadeIn();
+  	   // 			});
+
+	  			// $('#two_players').on('click', function() {
+	  			// 	$('.one_or_two_button').fadeOut();
+	   		// 		$('#player1_name').slideDown();
+	   		// 		$('#player2_name').slideDown();
+	   		// 		$('#submit_1').fadeIn();
+    		// 		$('#submit_2').fadeIn();
+	   		// 		player_vs_player();
+	   		// 	});
+
+
+     	// 		function player_vs_computer() {
+  	   //  			$('.choices img').on('click', function() {
+	     //          		p1.name = $('#player1_name').val();
+	  	  //   			choices = ["rock", "paper", "scissors", "lizard", "spock"]
+	  	  //   			p1.picks(choices[Math.floor(Math.random() * choices.length)]);
+	  	  //   			console.log("p1 picked:" + p1.pick);
+	  	  //   			p2.picks($(this).data('pick'));
+	  	  //   			console.log("p2 picked:" + p2.pick);
+	  	  //   			$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
+	  	  //   			$('li:gt(3)').fadeOut(function(){
+	  	  //   				$(this).remove();
+	  	  //   			});
+	  	  //   			console.log(game.winningMessage());
+	  	  //   			p1.pick = null;
+	  	  //   			p2.pick = null;
+	  	  //   		});
+	     //  		};
+
+      //     		function player_vs_player() {
+      //       		$('.choices img').on('click', function() {
+      //         			if (p1.pick === null) {
+      //         				p1.picks($(this).data('pick'));
+      //         				console.log("p1 picked:" + p1.pick);
+      //         			} else {
+      //         				p2.picks($(this).data('pick'));
+      //         				console.log("p2 picked:" + p2.pick);
+      //         				$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
+      //         				$('li:gt(2)').fadeOut(function(){
+      //         					$(this).remove();
+      //         				});
+      //         				console.log(game.winningMessage());
+      //         				p1.pick = null;
+      //         				p2.pick = null;
+      //         			};
+      //         		});
+      //       	};
             });
 		</script>
 	</body>

@@ -1,23 +1,19 @@
 
 body {
 	background-color: white;
-	margin-top: 5%;
-	padding-left: 250px;
-	vertical-align: center;
 }
 
 h1 {
-	padding-left: 25px;
+	margin-top: 20px;
 }
 
-div {
-	width: 100%;
+h3 {
+	padding-top: 4px;
 }
+
 button {
-	margin-top: 20px;
-	margin-left: 90px;
-	margin-right: 90px;
-	height: 25px;
+
+	height: 40px;
 	color: black;
 	text-align: center;
 	line-height: 12px;
@@ -27,21 +23,24 @@ button {
 
 input {
 	margin-top: 20px;
-	margin-left: 40px;
-	margin-right: 40px;
 	height: 25px;
 	width: 180px;
 	font-size: 12px;
-	vertical-align: top;
 	display: none;
 }
 
-.choices img {
-	width: 12%;
-	}
+.framework {
+	width: 100%;
+	text-align: center;
+	margin-top: 5%;
+}
+
+img {
+	width: 80%;
+}
 
 .choices img:hover {
-	}
+}
 
 .submit_name_button {
 	display: none;
@@ -49,7 +48,7 @@ input {
 
 #results {
 	list-style: none;
-	margin-top: 100px;
+	margin-top: 20px;
 	}
 
 #results li {
@@ -60,7 +59,6 @@ input {
 	border-radius: 8px;
 	padding: 5px;
 	width: 30%;
-	margin-left: 12.5%;
 	margin-bottom: 1%;
 	display: none;
 }
