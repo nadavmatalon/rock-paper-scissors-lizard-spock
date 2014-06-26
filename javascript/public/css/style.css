@@ -8,8 +8,9 @@ h1 {
 }
 
 h3 {
-/*	padding-top: 4px;
-*/}
+	padding-top: 20px;
+	vertical-align: center;
+}
 
 button {
 
@@ -62,6 +63,7 @@ img {
 
 #results_box {
 	list-style: none;
+	vertical-align: center;
 	margin-top: 20px;
 	}
 
@@ -86,4 +88,7 @@ img {
 	display: none;
 }
 
+#submit_1 {
+	vertical-align: "center";
+}
 
