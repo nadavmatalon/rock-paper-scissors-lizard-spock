@@ -23,11 +23,11 @@ button {
 
 
 input {
-	margin-top: 20px;
 	height: 25px;
 	width: 180px;
 	font-size: 12px;
 	display: none;
+	vertical-align: center;
 }
 
 .framework {
@@ -38,9 +38,11 @@ input {
 
 img {
 	width: 80%;
+	opacity: 0.7;
 }
 
 .choices img:hover {
+	opacity: 1;
 }
 
 .submit_name_button {
@@ -63,4 +65,11 @@ img {
 	margin-bottom: 1%;
 	display: none;
 }
+
+#first_box, #second_box {
+	font-size: 18px;
+	font-weight: 800;
+}
+
+
 

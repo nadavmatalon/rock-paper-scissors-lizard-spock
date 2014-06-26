@@ -55,15 +55,15 @@
     			<td width=15%>
     			</td>
   	 			<td width=70%>
-  	 				<table class="buttons" height="40px" border="1px" width=100%>
+  	 				<table class="buttons" height="40px" border="1px" width=100% valign="center">
   	 					<tr>
 				 			<td id="first_box" align="center" width=50%>
-			    				<p><button type="button" class="one_or_two_button" id="one_player">One Player</button></p>
+			    				<p><button type="button" class="one_or_two_button" id="one_player">Player vs Deep Thought</button></p>
 			    				<p><input type="text" class="player_name" id="player1_name" required="true" autofocus></input> <p> 
 			    			</td>
-			    			<td id="second_box" align="center">
-			    				<p><button type="button" class="one_or_two_button" id="two_players">Two Players</button></p>
-			    				<input type="text" class="player_name" id="player2_name" required></input>
+			    			<td id="second_box" valign= "center" align="center">
+			    				<p><button type="button" class="one_or_two_button" id="two_players">Player vs Player</button></p>
+			    				<p><input type="text" class="player_name" id="player2_name" valign="center" required></input></p>
 			    			</td>
   	 					</tr>
   	 				</table>
@@ -154,13 +154,15 @@
     					$('.one_or_two_button').fadeOut();
     					$('#player1_name').fadeIn();
     					$('#submit_1').fadeIn();
+    					p2.name = "Deep Thought";
+    					$('<p>' + p2.name + '</p>').prependTo('#second_box');
     					$('#submit_1').on('click', function(){
     						if ($('#player1_name').val() != "") {
 	   							p1.name = $('#player1_name').val();
-	   							p2.name = "Deep Thought"
     							$('#player1_name').fadeOut();
     							$('#submit_1').fadeOut();
-    							message = (p1.name + " , make your move");
+    							$('<p>' + p1.name + '</p>').prependTo('#first_box');
+    							message = (p1.name + " , make your selection!");
 				    			$('<h3>' + message + '</h3>').prependTo('#message');
 				    			$('h3:gt(1)').remove();
     							playerVsComputerGame();
@@ -202,7 +204,7 @@
 	       						};
 							};	
 							$('#submit_1').fadeOut();
-							message = ("Players pick your images");
+							message = (p1.name + " and " + p2.name + ", make your selection!");
 					    	$('<h3>' + message + '</h3>').prependTo('#message');
 					    	$('h3:gt(1)').remove();
 							playerVsPlayerGame();
