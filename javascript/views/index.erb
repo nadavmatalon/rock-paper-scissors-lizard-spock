@@ -77,8 +77,9 @@
     			<td width=70% align="center">
    	 				<table class="buttons" height="40px" border="1px" width=100%>
   	 					<tr>
-				 			<td align="center">
+				 			<td id="results_box" align="center">
 			    			  	<button type="button" class="submit_name_button" id="submit_1">Submit</button>
+			    			  	<ul id="results_box"></ul>
 			    			</td>
   	 					</tr>
   	 				</table>
@@ -90,8 +91,8 @@
     			<td width=15%>
     			</td>
     			<td width=70% align="center">
-			    	<ul id='results'></ul>
-	 			</td>
+<!-- 			    	<ul id='results'></ul>
+ -->	 			</td>
 	 			<td>
     			</td>
     		</tr>
@@ -107,20 +108,22 @@
     			var rand = null;
     			p1.pick = null;
     			$('<h3>' + message + '</h3>').prependTo('#message');
+    			$('.one_or_two_button').fadeIn();
     			selectNumberOfPlayers();
 
     			function message(content) {
     				return content;
     			}
+
     			function playerVsComputerGame() {
 					$('.choices img').on('click', function() {
-						choices = ["rock", "paper", "scissors", "lizard", "spock"]
-						p1.picks(choices[Math.floor(Math.random() * choices.length)]);
-	  	    			console.log(p1.name + "picked:" + p1.pick);
-	  	    			p2.picks($(this).data('pick'));
+						selection = ["rock", "paper", "scissors", "lizard", "spock"]
+						p2.picks(selection[Math.floor(Math.random() * selection.length)]);
 	  	    			console.log(p2.name + "picked:" + p2.pick);
-						$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
-	  	    			$('li:gt(3)').fadeOut(function(){
+	  	    			p1.picks($(this).data('pick'));
+	  	    			console.log(p1.name + "picked:" + p1.pick);
+						$('<li>' + game.winningMessage() + '</li>').prependTo('#results_box').slideDown();
+	  	    			$('li:gt(0)').fadeOut(function(){
 	  	    				$(this).remove();
 	  	    			});
 					});
@@ -134,7 +137,7 @@
               			} else {
               				p2.picks($(this).data('pick'));
               				console.log("p2 picked:" + p2.pick);
-              				$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
+              				$('<li>' + game.winningMessage() + '</li>').prependTo('#results_box').slideDown();
               				$('li:gt(0)').fadeOut(function(){
               					$(this).remove();
               				});
@@ -156,6 +159,7 @@
 	   							p1.name = $('#player1_name').val();
 	   							p2.name = "Deep Thought"
     							$('#player1_name').fadeOut();
+    							$('#submit_1').fadeOut();
     							message = (p1.name + " , make your move");
 				    			$('<h3>' + message + '</h3>').prependTo('#message');
 				    			$('h3:gt(1)').remove();
@@ -171,11 +175,9 @@
     				$('#two_players').on('click', function() {
     					$('.one_or_two_button').fadeOut();
     					$('#submit_1').fadeIn();
-
     					message = ("Please fill in your names");
 				    	$('<h3>' + message + '</h3>').prependTo('#message');
 				    	$('h3:gt(1)').remove();
- 
     					$('#player1_name').fadeIn();
     					$('#player2_name').fadeIn();
     					$('#submit_1').on('click', function() {
@@ -207,8 +209,6 @@
  						});
   					});
     			};
-
-
             });
 		</script>
 	</body>

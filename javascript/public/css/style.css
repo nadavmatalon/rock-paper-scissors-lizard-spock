@@ -18,7 +18,7 @@ button {
 	text-align: center;
 	line-height: 12px;
 	font-size: 12px;
-	/*display: none;*/
+	display: none;
 }
 
 
@@ -47,19 +47,19 @@ img {
 	display: none;
 }
 
-#results {
+#results_box {
 	list-style: none;
 	margin-top: 20px;
 	}
 
-#results li {
+#results_box li {
 	background: #999;
 	color: #fff;
 	text-align: center;
 	font-size: 24px;
 	border-radius: 8px;
 	padding: 5px;
-	width: 30%;
+	width: 50%;
 	margin-bottom: 1%;
 	display: none;
 }
