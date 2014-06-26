@@ -104,7 +104,7 @@
     			window.p1 = new Player('');
     			window.p2 = new Player('');
     			window.game = new Game(p1, p2);
-    			$(message = message("Welcome, please select number of players"));
+    			$(message = message("Welcome, please select game mode"));
     			var rand = null;
     			p1.pick = null;
     			$('<h3>' + message + '</h3>').prependTo('#message');
@@ -175,6 +175,8 @@
     				});
 
     				$('#two_players').on('click', function() {
+    					name_one_check = false;
+    					name_two_check = false;
     					$('.one_or_two_button').fadeOut();
     					$('#submit_1').fadeIn();
     					message = ("Please fill in your names");
@@ -182,32 +184,35 @@
 				    	$('h3:gt(1)').remove();
     					$('#player1_name').fadeIn();
     					$('#player2_name').fadeIn();
+    					
     					$('#submit_1').on('click', function() {
-							if ( $('#player1_name').val() !== "" || $('#player2_name').val() !== "" ) {
-	    						if ($('#player1_name').val() != "") {
-		   							p1.name = $('#player1_name').val();
-	    							$('#player1_name').fadeOut();
-	    							$('<p>' + p1.name + '</p>').prependTo('#first_box');
-	    						} else {
-	    							message = ("Sorry, name cannot be empty");
-					    			$('<h3>' + message + '</h3>').prependTo('#message');
-					    			$('h3:gt(1)').remove();
-	       						};
-	  							if ($('#player2_name').val() != "") {
-		   							p2.name = $('#player2_name').val();
-	    							$('#player2_name').fadeOut();
-	    							$('<p>' + p2.name + '</p>').prependTo('#second_box');
-	    						} else {
-	    							message = ("Sorry, name cannot be empty");
-					    			$('<h3>' + message + '</h3>').prependTo('#message');
-					    			$('h3:gt(1)').remove();
-	       						};
-							};	
-							$('#submit_1').fadeOut();
-							message = (p1.name + " and " + p2.name + ", make your selection!");
-					    	$('<h3>' + message + '</h3>').prependTo('#message');
-					    	$('h3:gt(1)').remove();
-							playerVsPlayerGame();
+	    			
+							if ($('#player1_name').val() != "" && !name_one_check) {
+	   							p1.name = $('#player1_name').val();
+								$('#player1_name').fadeOut();
+								$('<p>' + p1.name + '</p>').prependTo('#first_box');
+								name_one_check = true;
+							}
+	       						
+							if ($('#player2_name').val() != "" && !name_two_check) {
+	   							p2.name = $('#player2_name').val();
+								$('#player2_name').fadeOut();
+								$('<p>' + p2.name + '</p>').prependTo('#second_box');
+								name_two_check = true;
+							}
+     
+     						if (name_one_check && name_two_check) {				  					
+								$('#submit_1').fadeOut();
+								message = (p1.name + " and " + p2.name + ", make your selection!");
+						    	$('<h3>' + message + '</h3>').prependTo('#message');
+						    	$('h3:gt(1)').remove();
+								playerVsPlayerGame();
+							} else {
+								message = ("Sorry, name cannot be empty");
+					    		$('<h3>' + message + '</h3>').prependTo('#message');
+					    		$('h3:gt(1)').remove();								
+							}
+ 
  						});
   					});
     			};
