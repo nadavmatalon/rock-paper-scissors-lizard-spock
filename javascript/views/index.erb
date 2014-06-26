@@ -91,8 +91,8 @@
     			<td width=15%>
     			</td>
     			<td width=70% align="center">
-<!-- 			    	<ul id='results'></ul>
- -->	 			</td>
+			    		<button type="button" class="restart_button" id="restart">Restart Game</button>
+ 		 			</td>
 	 			<td>
     			</td>
     		</tr>
@@ -116,6 +116,7 @@
     			}
 
     			function playerVsComputerGame() {
+    				$('#restart').fadeIn();
 					$('.choices img').on('click', function() {
 						selection = ["rock", "paper", "scissors", "lizard", "spock"]
 						p2.picks(selection[Math.floor(Math.random() * selection.length)]);
@@ -127,9 +128,14 @@
 	  	    				$(this).remove();
 	  	    			});
 					});
+					$('#restart').on('click', function(){
+						$('#restart').fadeOut();
+            			alert("restart_1");
+  	 	   			});
     			};
 
    				function playerVsPlayerGame() {
+   					$('#restart').fadeIn();
            			$('.choices img').on('click', function() {
               			if (p1.pick === null) {
               				p1.picks($(this).data('pick'));
@@ -144,9 +150,13 @@
               				console.log(game.winningMessage());
               				p1.pick = null;
               				p2.pick = null;
-              			};
+              			};              		
             		});
-  	 			};
+            		$('#restart').on('click', function(){
+            			$('#restart').fadeOut();
+            			alert("restart_2");
+  	 	   			});
+   	 			};
 
 
     			function selectNumberOfPlayers() {
@@ -212,7 +222,6 @@
 					    		$('<h3>' + message + '</h3>').prependTo('#message');
 					    		$('h3:gt(1)').remove();								
 							}
- 
  						});
   					});
     			};
