@@ -98,7 +98,7 @@ Game.prototype.winningMessage = function() {
 };
 
 Game.prototype.message = function(content) {
-	return content.val();
+	return content.val;
 };
 
 

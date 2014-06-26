@@ -6,7 +6,7 @@
 		<meta charset="utf8">
     </head>
     <body>
-    	<table class="framework" border="0px" padding="20px" valign="center">
+    	<table class="framework" border="1px" padding="20px" valign="center">
     		<tr>
     			<td width=15%>
     			</td>
@@ -22,7 +22,7 @@
     		 	<td width=15%>
     			</td>
     			<td width=70%>
-    				<table class='choices' border="0px" width=100%>
+    				<table class='choices' border="1px" width=100%>
     					<tr>
 	    					<td align="center">
 	    						<img src="images/rock.png" data-pick='rock'>
@@ -48,7 +48,7 @@
     		<tr height="40px" style="valign: center;" padding="100px">
  				<td width=15%>
     			</td>
-    			<td width=70% align="center"> 
+    			<td width=70% align="center" height="40px"> 
     				<h3 id="message"></h3>
     			</td>
     			<td width=15%>
@@ -58,15 +58,15 @@
     			<td width=15%>
     			</td>
   	 			<td width=70%>
-  	 				<table class="buttons" height="40px" border="0px" width=100% valign="center">
+  	 				<table class="buttons" height="40px" border="1px" width=100% valign="center">
   	 					<tr>
 				 			<td id="first_box" align="center" width=50%>
-			    				<p><button type="button" class="one_or_two_button" id="one_player">Player vs Deep Thought</button></p>
+			    				<p><button type="button" class="gameModeButton" id="one_player">Player vs Deep Thought</button></p>
 			    				<p><input type="text" class="player_name" id="player1_name" required="true" autofocus></input> <p> 
 			    			</td>
 			    			<td id="second_box" valign= "center" align="center">
-			    				<p><button type="button" class="one_or_two_button" id="two_players">Player vs Player</button></p>
-			    				<p><input type="text" class="player_name" id="player2_name" valign="center" required></input></p>
+			    				<p><button type="button" class="gameModeButton" id="two_players">Player vs Player</button></p>
+			    				<p><input type="text" class="player_name" id="player2_name" required></input></p>
 			    			</td>
   	 					</tr>
   	 				</table>
@@ -78,7 +78,7 @@
     			<td width=15%>
     			</td>
     			<td width=70% align="center">
-   	 				<table class="buttons" height="40px" border="0px" width=100%>
+   	 				<table class="buttons" height="40px" border="1px" width=100%>
   	 					<tr>
 				 			<td id="results_box" align="center">
 			    			  	<button type="button" class="submit_name_button" id="submit_1">Submit</button>
@@ -104,130 +104,170 @@
     	<script src='lib/jquery-2.1.1.min.js'></script>
     	<script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
     	<script>
-    		$(document).ready(function(){
-    			window.p1 = new Player('');
-    			window.p2 = new Player('');
+
+    	playGame();
+
+    		function playGame() {
+    			$(document).ready(function() {
+ 					createNewGame();
+					updateMainMessage("Welcome, please select game mode");
+					selectGameMode();
+    			});
+    		};
+
+    		function createNewGame() {
+  				window.p1 = new Player("");
+    			window.p2 = new Player("");
     			window.game = new Game(p1, p2);
-    			$(message = message("Welcome, please select game mode"));
-    			var rand = null;
-    			p1.pick = null;
-    			$('<h3>' + message + '</h3>').prependTo('#message');
-    			$('.one_or_two_button').fadeIn();
-    			selectNumberOfPlayers();
+    			window.message = "";
+    			appendMainMessage();
+    			resetPlayersPicks();
+    		};
 
-    			function message(content) {
-    				return content;
-    			}
+    		function appendMainMessage() {
+				$("#message").append("<h3>" + message + "</h3>");
+    		};
 
-    			function playerVsComputerGame() {
-    				$('#restart').fadeIn();
-					$('.choices img').on('click', function() {
-						selection = ["rock", "paper", "scissors", "lizard", "spock"]
-						p2.picks(selection[Math.floor(Math.random() * selection.length)]);
-	  	    			console.log(p2.name + "picked:" + p2.pick);
-	  	    			p1.picks($(this).data('pick'));
-	  	    			console.log(p1.name + "picked:" + p1.pick);
-						$('<li>' + game.winningMessage() + '</li>').prependTo('#results_box').slideDown();
-	  	    			$('li:gt(0)').fadeOut(function(){
-	  	    				$(this).remove();
-	  	    			});
-					});
-					$('#restart').on('click', function(){
-						location.reload();
-  	 	   			});
-    			};
+    		function resetPlayersPicks() {
+              	p1.pick = null;
+              	p2.pick = null;
+      		};
 
-   				function playerVsPlayerGame() {
-   					$('#restart').fadeIn();
-           			$('.choices img').on('click', function() {
-              			if (p1.pick === null) {
-              				p1.picks($(this).data('pick'));
-              				console.log("p1 picked:" + p1.pick);
-              			} else {
-              				p2.picks($(this).data('pick'));
-              				console.log("p2 picked:" + p2.pick);
-              				$('<li>' + game.winningMessage() + '</li>').prependTo('#results_box').slideDown();
-              				$('li:gt(0)').fadeOut(function(){
-              					$(this).remove();
-              				});
-              				console.log(game.winningMessage());
-              				p1.pick = null;
-              				p2.pick = null;
-              			};              		
-            		});
-            		$('#restart').on('click', function(){
-						location.reload();
-					});
-   	 			};
+			function updateMainMessage(message) {
+				$('#message').text(message);
+			};
 
+			function selectGameMode() {
+				$(".gameModeButton").fadeIn();
+				$('#one_player').on('click', function() {
+					setSinglePlayerMode();
+				});
+				$('#two_players').on('click', function() {
+					setTwoPlayersMode();
+				});
+			};
+            
+			function setSinglePlayerMode() {
+				setPlayersNames("single");
+				$("#submit_1").on('click', function() {
+					if ($('#player1_name').val() != "") {
+							p1.name = $('#player1_name').val();
+						$('#player1_name').fadeOut(function() {
+							$(this).remove();
+						});
+						$("#submit_1").fadeOut(function() {
+							$(this).remove();
+						});
+						$("#first_box").text(p1.name);
+						playerVsComputer();
+					} else {
+						updateMainMessage("Please enter name to begin");
+					};
+				});
+			};
 
-    			function selectNumberOfPlayers() {
-    				$('#one_player').on('click', function() {
-    					$('.one_or_two_button').fadeOut();
-    					$('#player1_name').fadeIn();
-    					$('#submit_1').fadeIn();
-    					p2.name = "Deep Thought";
-    					$('<p>' + p2.name + '</p>').prependTo('#second_box');
-    					$('#submit_1').on('click', function(){
-    						if ($('#player1_name').val() != "") {
-	   							p1.name = $('#player1_name').val();
-    							$('#player1_name').fadeOut();
-    							$('#submit_1').fadeOut();
-    							$('<p>' + p1.name + '</p>').prependTo('#first_box');
-    							message = (p1.name + " , make your selection!");
-				    			$('<h3>' + message + '</h3>').prependTo('#message');
-				    			$('h3:gt(1)').remove();
-    							playerVsComputerGame();
-    						} else {
-    							message = ("Sorry, name cannot be empty");
-				    			$('<h3>' + message + '</h3>').prependTo('#message');
-				    			$('h3:gt(1)').remove();
-       						};
-    					});
-    				});
+			function setTwoPlayersMode() {
+				name_one_check = false;
+				name_two_check = false;
+				setPlayersNames("twoPlayers");
+				$('#submit_1').on('click', function() {
+					if ($('#player1_name').val() != "" && !name_one_check) {
+						p1.name = $('#player1_name').val();
+						$('#player1_name').fadeOut();
+						$('#first_box').text(p1.name);
+						name_one_check = true;
+					};	
+					if ($('#player2_name').val() != "" && !name_two_check) {
+						p2.name = $('#player2_name').val();
+						$('#player2_name').fadeOut();
+						$('#second_box').text(p2.name);
+						name_two_check = true;
+					};
+					if (name_one_check && name_two_check) {				  					
+						$('#submit_1').fadeOut();
+						updateMainMessage(p1.name + " and " + p2.name + ", make your selection!");
+						playerVsPlayer();
+					} else {
+						updateMainMessage("Please enter both names to begin");
+					};
+				});
+			};
 
-    				$('#two_players').on('click', function() {
-    					name_one_check = false;
-    					name_two_check = false;
-    					$('.one_or_two_button').fadeOut();
-    					$('#submit_1').fadeIn();
-    					message = ("Please fill in your names");
-				    	$('<h3>' + message + '</h3>').prependTo('#message');
-				    	$('h3:gt(1)').remove();
-    					$('#player1_name').fadeIn();
-    					$('#player2_name').fadeIn();
-    					
-    					$('#submit_1').on('click', function() {
-	    			
-							if ($('#player1_name').val() != "" && !name_one_check) {
-	   							p1.name = $('#player1_name').val();
-								$('#player1_name').fadeOut();
-								$('<p>' + p1.name + '</p>').prependTo('#first_box');
-								name_one_check = true;
-							}
-	       						
-							if ($('#player2_name').val() != "" && !name_two_check) {
-	   							p2.name = $('#player2_name').val();
-								$('#player2_name').fadeOut();
-								$('<p>' + p2.name + '</p>').prependTo('#second_box');
-								name_two_check = true;
-							}
-     
-     						if (name_one_check && name_two_check) {				  					
-								$('#submit_1').fadeOut();
-								message = (p1.name + " and " + p2.name + ", make your selection!");
-						    	$('<h3>' + message + '</h3>').prependTo('#message');
-						    	$('h3:gt(1)').remove();
-								playerVsPlayerGame();
-							} else {
-								message = ("Sorry, name cannot be empty");
-					    		$('<h3>' + message + '</h3>').prependTo('#message');
-					    		$('h3:gt(1)').remove();								
-							}
- 						});
-  					});
-    			};
-            });
+			function setPlayersNames(mode) {
+				$('.gameModeButton').remove();
+				$('#player1_name').fadeIn();
+				$('#submit_1').fadeIn();
+				if (mode === "single") {
+					updateMainMessage("Please enter your name:");
+					p2.name = "Deep Thought";
+					$('#second_box').text(p2.name);
+				};
+				if (mode === "twoPlayers") {
+					updateMainMessage("Please enter your names:");
+					$('#player2_name').fadeIn();	
+				};
+			};
+
+			function playerVsComputer() {
+				updateMainMessage(p1.name + " , make your selection!");
+				$('#restart').fadeIn();
+				$('.choices img').on('click', function() {
+  	    			p1.picks($(this).data('pick'));
+					p2.picks(randomPick());
+  	    			showWinningMessage();
+  	    			showPicksAndWinningMessageInConsole();
+				});
+				$('#restart').on('click', function() {
+					restartGame();
+	 	   		});
+			};
+
+   			function randomPick() {
+    			selection = ["rock", "paper", "scissors", "lizard", "spock"];
+    			return selection[Math.floor(Math.random() * selection.length)];
+    		};
+
+			function playerVsPlayer() {
+				$('#restart').fadeIn();
+       			$('.choices img').on('click', function() {
+          			if (p1.pick === null) {
+          				p1.picks($(this).data('pick'));
+          			} else {
+          				p2.picks($(this).data('pick'));
+						showWinningMessage();
+              			showPicksAndWinningMessageInConsole();            		
+              			resetPlayersPicks();
+          			};
+        		});
+        		$('#restart').on('click', function() {
+					restartGame();
+				});
+	 		};
+
+			function showWinningMessage() {
+				$('<li>' + game.winningMessage() + '</li>').prependTo('#results_box').slideDown();
+  	    		$('li:gt(0)').fadeOut(function(){
+  	    			$(this).remove();
+  	    		});
+			};
+
+   			function showPicksInConsole() {
+    			console.log(p1.name + " picked: " + p1.pick);
+	  	    	console.log(p2.name + " picked: " + p2.pick);
+    		};
+
+    		function showWinningMessageInConsole() {
+    			console.log(game.winningMessage());
+    		};
+
+    		function showPicksAndWinningMessageInConsole() {
+    			showPicksInConsole();
+				showWinningMessageInConsole();
+    		};
+
+			function restartGame() {
+    			location.reload();
+    		};
 		</script>
 	</body>
 </html>
