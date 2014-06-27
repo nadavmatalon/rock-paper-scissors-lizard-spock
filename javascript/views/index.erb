@@ -230,7 +230,7 @@
 			};
 
 			function playerVsComputer() {
-				updateMainMessage(p1.name + " , click on image to select!");
+				updateMainMessage(p1.name + " , click on image to make your move!");
 				$('#restart').fadeIn(200);
 				$('.choices img').on('click', function() {
   	    			p1.picks($(this).data('pick'));
@@ -249,7 +249,7 @@
     		};
 
 			function playerVsPlayer() {
-				updateMainMessage(p1.name + " and " + p2.name + ", click on images to select!");
+				updateMainMessage(p1.name + " and " + p2.name + ", click on images to make your moves!");
 				$('#restart').fadeIn(200);
        			$('.choices img').on('click', function() {
           			if (p1.pick === null) {
