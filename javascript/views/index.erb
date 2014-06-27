@@ -6,7 +6,7 @@
 		<meta charset="utf8">
     </head>
     <body>
-    	<table class="framework" border="1px" padding="20px" valign="center">
+    	<table class="framework" border="0px" padding="20px" valign="center">
     		<tr>
     			<td width=15%>
     			</td>
@@ -22,7 +22,7 @@
     		 	<td width=15%>
     			</td>
     			<td width=70%>
-    				<table class='choices' border="1px" width=100%>
+    				<table class='choices' border="0px" width=100%>
     					<tr>
 	    					<td align="center">
 	    						<img src="images/rock.png" data-pick='rock'>
@@ -58,7 +58,7 @@
     			<td width=15%>
     			</td>
   	 			<td width=70%>
-  	 				<table class="buttons" height="40px" border="1px" width=100% valign="center">
+  	 				<table class="buttons" height="40px" border="0px" width=100% valign="center">
   	 					<tr>
 				 			<td id="first_box" align="center" width=50% valign="center" height="65px">
 			    				<p><button type="button" class="gameModeButton" id="one_player">Player vs Deep Thought</button></p>
@@ -78,11 +78,11 @@
     			<td width=15%>
     			</td>
     			<td width=70% align="center" valign="center" height="65px">
-   	 				<table class="buttons" height="40px" valign="canter" border="1px" width=100%>
+   	 				<table class="buttons" height="40px" valign="canter" border="0px" width=100%>
   	 					<tr>
-				 			<td id="results_box" align="center" valign="center" height="65px">
+    						<td id="result_box" width=70% height="100px" align="center" valign="center" height="65px"> 
+								<h3 id="resultMessage"></h3>
 			    			  	<button type="button" class="submit_name_button" valign="center" id="submit_1">Submit</button>
-			    			  	<ul id="results_box" height="40px" valign="center"></ul>
 			    			</td>
   	 					</tr>
   	 				</table>
@@ -110,7 +110,6 @@
     		function playGame() {
     			$(document).ready(function() {
  					createNewGame();
-					updateMainMessage("Welcome, please select game mode");
 					selectGameMode();
     			});
     		};
@@ -120,6 +119,7 @@
     			window.p2 = new Player("");
     			window.game = new Game(p1, p2);
     			window.message = "";
+    			window.resultMessage="";
     			appendMainMessage();
     			resetPlayersPicks();
     		};
@@ -128,17 +128,31 @@
 				$("#message").append("<h3>" + message + "</h3>");
     		};
 
+   			function appendResultMessage() {
+				$("#result_box").append("<h3>" + resultMessage + "</h3>");
+    		};
+
     		function resetPlayersPicks() {
               	p1.pick = null;
               	p2.pick = null;
       		};
 
 			function updateMainMessage(message) {
-				$('#message').text(message);
+					$('#message').fadeOut(200, function() {
+					$('#message').text(message).fadeIn(200);
+				});
+			};
+
+			function updateResultMessage(result_message) {
+				$('#resultMessage').fadeOut(200, function() {
+					$('#resultMessage').text(result_message).fadeIn(200);
+				});
 			};
 
 			function selectGameMode() {
-				$(".gameModeButton").fadeIn();
+				$(".gameModeButton").fadeIn(200);
+				updateMainMessage("Welcome, please select game mode");
+
 				$('#one_player').on('click', function() {
 					setSinglePlayerMode();
 				});
@@ -156,7 +170,9 @@
 							$(this).remove();
 						});
 						$("#submit_1").fadeOut(function() {
-							$(this).remove();
+							$(this).remove(function(){
+								appendResultMessage();
+							});
 						});
 						$("#first_box").text(p1.name);
 						playerVsComputer();
@@ -184,8 +200,11 @@
 						name_two_check = true;
 					};
 					if (name_one_check && name_two_check) {				  					
-						$('#submit_1').fadeOut();
-						updateMainMessage(p1.name + " and " + p2.name + ", make your selection!");
+						$('#submit_1').fadeOut(function(){
+							$(this).remove(function(){
+								appendResultMessage();
+							});
+						});
 						playerVsPlayer();
 					} else {
 						updateMainMessage("Please enter both names to begin");
@@ -204,13 +223,13 @@
 				};
 				if (mode === "twoPlayers") {
 					updateMainMessage("Please enter your names:");
-					$('#player2_name').fadeIn();	
+					$('#player2_name').fadeIn(200);	
 				};
 			};
 
 			function playerVsComputer() {
 				updateMainMessage(p1.name + " , make your selection!");
-				$('#restart').fadeIn();
+				$('#restart').fadeIn(200);
 				$('.choices img').on('click', function() {
   	    			p1.picks($(this).data('pick'));
 					p2.picks(randomPick());
@@ -228,7 +247,8 @@
     		};
 
 			function playerVsPlayer() {
-				$('#restart').fadeIn();
+				updateMainMessage(p1.name + " and " + p2.name + ", make your selection!");
+				$('#restart').fadeIn(200);
        			$('.choices img').on('click', function() {
           			if (p1.pick === null) {
           				p1.picks($(this).data('pick'));
@@ -245,10 +265,7 @@
 	 		};
 
 			function showWinningMessage() {
-				$('<li>' + game.winningMessage() + '</li>').prependTo('#results_box').slideDown();
-  	    		$('li:gt(0)').fadeOut(function(){
-  	    			$(this).remove();
-  	    		});
+				updateResultMessage(game.winningMessage());
 			};
 
    			function showPicksInConsole() {

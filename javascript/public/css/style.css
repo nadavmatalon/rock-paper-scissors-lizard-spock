@@ -9,7 +9,14 @@ h1 {
 
 h3 {
 	padding-top: 20px;
+	display: none;
 	vertical-align: center;
+}
+
+#resultMessage {
+	vertical-align: center;
+	display: none;
+	color: purple;
 }
 
 button {
