@@ -79,13 +79,13 @@ input {
 }
 
 img {
-	width: 90%;
 	opacity: 0.8;
+	border-radius: 80px;
 }
 
 .choices img:hover {
 	opacity: 1;
-	box-shadow: 1px 1px 1px 1px #888888;
+	border-radius: 80px;
 }
 
 .submit_name_button {
