@@ -282,7 +282,7 @@ describe("Rock-Paper-Scissors::", function() {
         player2.picks('spock');
         expect(game.messageVerb()).toEqual('poisons');
       });
-//wwwwwwwww
+
        it("correct key word for winner\'s choice", function() {
         player1.picks('lizard');
         player2.picks('paper');
