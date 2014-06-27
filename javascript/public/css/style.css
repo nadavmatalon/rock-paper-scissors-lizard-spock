@@ -30,6 +30,10 @@ h3 {
 	color: purple;
 }
 
+.result_bg {
+	background-color: gray;
+}
+
 button {
 
 	height: 40px;
@@ -75,8 +79,8 @@ input {
 }
 
 img {
-	width: 80%;
-	opacity: 0.7;
+	width: 90%;
+	opacity: 0.8;
 }
 
 .choices img:hover {
