@@ -8,6 +8,8 @@
 
 <p>It consists of a slightly more sophisticated version of the well-known childrens' game, rock-paper-scissors.</p>
 
+<p>The game can be played either with two players or agaist the super computer 'Deep Though'.</p>
+
 <p>The rules are as follows:</p>
 
 <ul>
@@ -23,14 +25,12 @@
 	<li>Rock crushes Scissors</li>
 </ul>
 
-<p>(<strong>Source:</strong> http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)</p>
-
-<p>The game can be played either with two players or agaist the super computer 'Deep Though'.</p>
+<p>(Source: http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)</p>
 
 
 <h3>See it Live on Heroku</h3><br/>
 
-<p>A live version of the game can be found (and played!) on Heroku at:</p>
+<p>A live version of the game can be found (and played!) at:</p>
 
 <p>http://makers-rock-paper-scissors.herokuapp.com</p>
 
