@@ -39,5 +39,5 @@
 
 <p>Please note that this app has been optimized primarily for <strong>Google Chrome</strong>, 
 and to a lesser extent <strong>Apple Safari</strong>. However. it should look decent on other
-browsers as well</p>
+browsers as well.</p>
 
