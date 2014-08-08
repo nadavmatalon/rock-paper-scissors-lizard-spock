@@ -5,13 +5,18 @@
 <p><strong>Bookmark Manager</strong> </p>
 
 <p>This app was created as an exercise in buiding a complete JavaScript 
-web application via TDD (testing done with Jasmine).</p> 
+web application, using Jquery functionality and TDD methodology
+(testing was done with Jasmine).</p> 
 
-<p>It consists of a slightly more sophisticated version of the well-known childrens' game, rock-paper-scissors.</p>
+<p>The starting point for this project was provided by Alex Peattie (a coach at Makers) and
+consisted of a sample code both in Ruby and JavaScript for the original game, 'rock paper scissors' 
+(Alex's code can be found here: https://github.com/alexmakers/rockpaperscissors).</p>
 
-<p>The game can be played either with two players or agaist the super computer 'Deep Though'.</p>
+<p>The present code actualizes a slightly more sophisticated version of the game
+which includes two additional characters: the lizard and Spock.</p>
 
-<p>(Source: http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)</p>
+<p>The app gives the option of playing the game either with two players or agaist the 
+super computer 'Deep Though'.</p>
 
 
 <h3>How to Play</h3>
@@ -20,7 +25,7 @@ web application via TDD (testing done with Jasmine).</p>
 
 <p>Next, enter name/s of player/s</p>
 
-<p>Here's a quick review of the rules:</p>
+<p>Here's a quick overview of the rules:</p>
 
 <ul>
 	<li>Scissors cut Paper</li>
@@ -34,6 +39,8 @@ web application via TDD (testing done with Jasmine).</p>
 	<li>Spock vaporizes Rock</li>
 	<li>Rock crushes Scissors</li>
 </ul>
+
+<p>(Source: http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)</p>
 
 <p>And now it's game time:</p>
 
