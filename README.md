@@ -55,17 +55,9 @@ and after the two choice are made, the result is shown on the screen.</p>
 
 <h3>See it Live on Heroku</h3>
 
+<p><img style="float: right" src="javascript/public/images/footer/heroku_small.png" />
 A live version of the game can be found (and played!) at:
-<img style="float: right" src="javascript/public/images/footer/heroku_small.png" />
-some more text
-
-
-A live version of the game can be found (and played!) at:
-<img style="float: left" src="javascript/public/images/footer/heroku_small.png" />
-some more text
-
-
-http://makers-rock-paper-scissors.herokuapp.com
+http://makers-rock-paper-scissors.herokuapp.com</p>
 
 
 <h3>Browser Caveate</h3><br/>
