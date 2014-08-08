@@ -1,8 +1,22 @@
 <h1>Rock • Paper • Scissors • Lizard • Spock</h1>
 
-<h3>Description</h3><br/>
 
-<p><strong>Bookmark Manager</strong> </p>
+## Table of Contents
+
+* [App Screenshot](#app-screenshot)
+* [General Description](#general-description)
+* [How to Play](#how-to-play)
+* [See it Live on Heroku](#see-it-live-on-heroku)
+* [Browser Caveate](#browser-caveate)
+* [Testing](#testing)
+
+
+
+## App Screenshot
+
+![](javascript/public/images/screenshot.png "app-screenshot")
+
+##  General Description
 
 <p>This app was created as an exercise in buiding a complete JavaScript 
 web application, using Jquery functionality and TDD methodology
@@ -19,7 +33,7 @@ which includes two additional characters: the lizard and Spock.</p>
 super computer 'Deep Though'.</p>
 
 
-<h3>How to Play</h3>
+##  How to Play
 
 <p>First, select game mode: 'Player vs Deep Thought' or Player vs Player</p>
 
@@ -51,21 +65,20 @@ super computer 'Deep Though'.</p>
 and after the two choice are made, the result is shown on the screen.</p>
 
 
-<h3>See it Live on Heroku</h3><br/>
-
-<p>A live version of the game can be found (and played!) at:</p>
-
+##  See it Live on Heroku
+			
+<p>A live version of the game can be found (and played!) at:</p> 
 <p>http://makers-rock-paper-scissors.herokuapp.com</p>
 
 
-<h3>Browser Caveate</h3><br/>
+##  Browser Caveate
 
 <p>Please note that this app has been optimized primarily for <strong>Google Chrome</strong>, 
 and to a lesser extent <strong>Apple Safari</strong>. However. it should look decent on other
 browsers as well.</p>
 
 
-<h3>Testing</h3><br/>
+##  Testing
 
 <p>Tests were written with Rspec (for Ruby side) & Jasmine (for JavaScript side).</p>
 
