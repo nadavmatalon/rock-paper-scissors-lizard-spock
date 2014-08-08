@@ -1,6 +1,6 @@
 <h1>Rock • Paper • Scissors • Lizard • Spock</h1>
 
-![Rock-Paper-Scissors-Lizard-Spock](javascript/public/images/rpsls-screenshot.png)
+![](javascript/public/images/rpsls-screenshot.png "Rock Paper Scissors Lizard Spock")
 
 <h3>Description</h3><br/>
 
