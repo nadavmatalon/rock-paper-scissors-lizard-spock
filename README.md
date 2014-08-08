@@ -1,7 +1,5 @@
 <h1>Rock • Paper • Scissors • Lizard • Spock</h1>
 
-![Rock-Paper-Scissors-Lizard-Spock](https://raw.githubusercontent.com/nadavmatalon/rock-paper-scissors-lizard-spock/markdown/javascript/public/images/rpsls-screenshot.png)
-
 ![Rock-Paper-Scissors-Lizard-Spock](javascript/public/images/rpsls-screenshot.png)
 
 <h3>Description</h3><br/>
