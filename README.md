@@ -1,6 +1,6 @@
 <h1>Rock • Paper • Scissors • Lizard • Spock</h1>
 
-![](javascript/public/images/rpsls-screenshot.png "app-screenshot")
+![](javascript/public/images/screenshot.png "app-screenshot")
 
 <h3>Description</h3><br/>
 
