@@ -129,7 +129,7 @@ input {
  	vertical-align: center;
 }
 
-img {
+.game-img {
 	opacity: 0.8;
 	border-radius: 80px;
 }
