@@ -1,6 +1,7 @@
 ## Version 1 - Ruby -> JavaScript
 
-For the initial version of Rock-Paper-Scissors, take our existing Ruby code and Jasmine specs and implement RPS in JavaScript. Some gotchas to watch out for:
+For the initial version of Rock-Paper-Scissors, take our existing Ruby code and 
+Jasmine specs and implement RPS in JavaScript. Some gotchas to watch out for:
 
 * There's no concept of **symbols** in JavaScript (everything is a string)
 * **Blocks, methods and classes** are replaced with the :pill: [function keyword](https://github.com/makersacademy/course/blob/master/pills/js_functions.md).
@@ -15,11 +16,16 @@ For the next iteration, add two new options into the mix: **Lizard** and **Spock
 
 http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock
 
-Write new Jasmine specs for these new choices. Try and avoid a bunch of long, complicated `if` statements in your implementation. Knowledge of :pill: [arrays in JavaScript](https://github.com/makersacademy/course/blob/master/pills/js_arrays.md) might come in handy.
+Write new Jasmine specs for these new choices. 
+Try and avoid a bunch of long, complicated `if` statements in your implementation. 
+Knowledge of :pill: [arrays in JavaScript]
+(https://github.com/makersacademy/course/blob/master/pills/js_arrays.md) might come in handy.
 
 ### Version 2.5 - Victory messages
 
- Write a new method (with specs) in your Game class, that returns a string with the winning player's name, the winning player's pick, the losing player's name and pick, joined with an appropriate verb. E.g.
+ Write a new method (with specs) in your Game class, that returns a string with 
+ the winning player's name, the winning player's pick, the losing player's name and pick, 
+ joined with an appropriate verb. E.g.
 
 > **Alex's rock crushes Tony's scissors**
 
@@ -29,7 +35,8 @@ Write new Jasmine specs for these new choices. Try and avoid a bunch of long, co
 
 Build a simple web interface using HTML and CSS for your Rock-Paper-Scissors game. Using :pill: [jQuery event handlers](https://github.com/makersacademy/course/blob/master/pills/jquery_events.md) to select the player choice when one of the buttons on the page are clicked. Use [data attributes](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_data_attributes) to tie a particular button to a particular choice.
 
-For the initial version, the computer opponent can always choose the same thing - e.g. always picks rock.
+For the initial version, the computer opponent can always choose the same thing - e.g. always 
+picks rock.
 
 Once the player has picked something, the result ("Alex's rock crushes Tony's scissors") should be appended as a HTML snippet to the bottom of the page. Additionally, try using jQuery animations or [CSS transitions](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_transitions) to animate the message appearing.
 
@@ -40,15 +47,25 @@ Some previous students' apps, to inspire you:
 
 ### Version 3.5 - Randomness and clearing messages
 
-There are a couple of small improvements we can make. First, we can make the game more interesting by having the computer pick their choice at random. To implement this JavaScript's `Math.random()` method will come in handy.
+There are a couple of small improvements we can make. First, we can make the game more 
+interesting by having the computer pick their choice at random. 
+To implement this JavaScript's `Math.random()` method will come in handy.
 
-Additionally, the messages will continue to build up infinitely. Enhance the app so that only the results from the most recent 5 games are displayed. Ideally, old messages should be removed from the DOM (HTML document) as well as being visually hidden.
+Additionally, the messages will continue to build up infinitely. 
+Enhance the app so that only the results from the most recent 5 games are displayed. 
+Ideally, old messages should be removed from the DOM (HTML document) 
+as well as being visually hidden.
 
 ## Version 4 - Deploy to Heroku
 
-Finally, let's push the application to Heroku. Until now we've been dealing with static HTML/CSS/JS files, but to run this on Heroku's platform, we'll need a very simple server to serve the site. We'll use a minimal Sinatra app to make this deployable.
+Finally, let's push the application to Heroku. 
+Until now we've been dealing with static HTML/CSS/JS files, 
+but to run this on Heroku's platform, we'll need a very simple server to serve the site. 
+We'll use a minimal Sinatra app to make this deployable.
 
-Our HTML file (e.g. `index.html`) should be given a `.erb` extension and moved to the views directory (e.g. `views/index.erb`). Our CSS and JS files should be moved into the `public` directory.
+Our HTML file (e.g. `index.html`) should be given a `.erb` extension and moved 
+to the views directory (e.g. `views/index.erb`). 
+Our CSS and JS files should be moved into the `public` directory.
 
 We'll need a Gemfile to load in Sinatra:
 
