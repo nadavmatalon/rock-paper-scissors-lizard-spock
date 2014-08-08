@@ -6,102 +6,155 @@
 		<meta charset="utf8">
     </head>
     <body>
-    	<div border="1px">
-    	<table class="framework" border="0px" padding="20px" valign="center">
-    		<tr>
-    			<td width=15%>
-    			</td>
-    			<td width=70%>
-    			    <h1>
-    			    	<span>Rock Paper Scissors Lizard Spock</span>
-    			    </h1>
-    			</td width=15%>
-    			<td>
-    			</td>
-    		</tr>
-    		<tr>
-    		 	<td width=15%>
-    			</td>
-    			<td width=70%>
-    				<table class='choices' border="0px" width=100%>
-    					<tr>
-	    					<td align="center">
-	    						<img src="images/rock.png" data-pick='rock'>
-	    					</td>
-	    					<td align="center">
-	 	 	     				<img src="images/paper.png" data-pick='paper'>
-	    					</td>
-	    					<td align="center">
-								<img src="images/scissors.png" data-pick='scissors'>
-	      					</td>
-	      					<td align="center">
-			    				<img src="images/lizard.png" data-pick='lizard'>
-	      					</td>
-	      					<td align="center">
-	    						<img src="images/spock.png" data-pick='spock'>
-	      					</td>
-    					</tr>
-    				</table>
-       			</td>
-       			<td width=15%>
-    			</td>
-    		</tr>
-    		<tr height="40px" style="valign: center;" padding="100px">
- 				<td width=15%>
-    			</td>
-    			<td width=70% align="center" valign="center" height="65px"> 
-    				<h3 id="message"></h3>
-    			</td>
-    			<td width=15%>
-    			</td>
-    		</tr>
-    		<tr>
-    			<td width=15%>
-    			</td>
-  	 			<td width=70%>
-  	 				<table class="buttons" height="40px" border="0px" width=100% valign="center">
-  	 					<tr>
-				 			<td id="first_box" align="center" width=50% valign="center" height="65px">
-			    				<p><button type="button" class="gameModeButton" id="one_player">Player vs Deep Thought</button></p>
-			    				<p><input type="text" class="player_name" placeholder="Player One" id="player1_name" required="true" autofocus></input> </p> 
-			    			</td>
-			    			<td id="second_box" valign= "center" align="center" height="65px">
-			    				<p><button type="button" class="gameModeButton" id="two_players">Player vs Player</button></p>
-			    				<p><input type="text" class="player_name" placeholder="Player Two" id="player2_name" required></input></p>
-			    			</td>
-  	 					</tr>
-  	 				</table>
-    			</td>
-    			<td width=15%>
-    			</td>
-    		</tr>
-    		<tr>
-    			<td width=15%>
-    			</td>
-    			<td width=70% align="center" valign="center" height="65px">
-   	 				<table class="buttons" height="40px" valign="canter" border="0px" width=100%>
-  	 					<tr>
-    						<td id="result_box" width=70% height="100px" align="center" valign="center" height="65px"> 
-								<h3 id="resultMessage"></h3>
-			    			  	<button type="button" class="submit_name_button" valign="center" id="submit_1">Submit</button>
-			    			</td>
-  	 					</tr>
-  	 				</table>
-	 			</td>
-	 			<td width=15%>
-    			</td>
-    		</tr>
-    		<tr>
-    			<td width=15%>
-    			</td>
-    			<td width=70% align="center" valign="center" height="65px">
-			    		<button type="button" class="restart_button" id="restart">Restart Game</button>
- 		 			</td>
-	 			<td>
-    			</td>
-    		</tr>
-    	</table>
+    	<div class="div-special main-frame">
+	    	<table class="framework">
+	    		<tr>
+	    			<td class="td-narrow">
+	    			</td>
+	    			<td class="td-wide page-title">
+	    			    <h1>
+	    			    	<span>Rock  Paper  Scissors  Lizard  Spock</span>
+	    			    </h1>
+	    			</td class="td-narrow">
+	    			<td>
+	    			</td>
+	    		</tr>
+	    		<tr>
+	    		 	<td class="td-narrow">
+	    			</td>
+	    			<td class="td-wide">
+	    				<table class="choices">
+	    					<tr>
+		    					<td align="center">
+		    						<img class="game-img" src="images/rock.png" data-pick='rock'>
+		    					</td>
+		    					<td align="center">
+		 	 	     				<img class="game-img" src="images/paper.png" data-pick='paper'>
+		    					</td>
+		    					<td align="center">
+									<img class="game-img" src="images/scissors.png" data-pick='scissors'>
+		      					</td>
+		      					<td align="center">
+				    				<img class="game-img" src="images/lizard.png" data-pick='lizard'>
+		      					</td>
+		      					<td align="center">
+		    						<img class="game-img" src="images/spock.png" data-pick='spock'>
+		      					</td>
+	    					</tr>
+	    				</table>
+	       			</td>
+	       			<td class="td-narrow">
+	    			</td>
+	    		</tr>
+	    		<tr class="tr-special">
+	 				<td class="td-narrow">
+	    			</td>
+	    			<td class="td-specical"> 
+	    				<h3 id="message"></h3>
+	    			</td>
+	    			<td class="td-narrow">
+	    			</td>
+	    		</tr>
+	    		<tr>
+	    			<td class="td-narrow">
+	    			</td>
+	  	 			<td class="td-wide">
+	  	 				<table class="buttons table-special">
+	  	 					<tr>
+					 			<td id="first_box" align="center" width=50% valign="center" height="65px">
+				    				<p><button type="button" class="gameModeButton" id="one_player">Player vs Deep Thought</button></p>
+				    				<p><input type="text" class="player_name" placeholder="Player One" id="player1_name" required="true" autofocus></input> </p> 
+				    			</td>
+				    			<td id="second_box" valign= "center" align="center" height="65px">
+				    				<p><button type="button" class="gameModeButton" id="two_players">Player vs Player</button></p>
+				    				<p><input type="text" class="player_name" placeholder="Player Two" id="player2_name" required></input></p>
+				    			</td>
+	  	 					</tr>
+	  	 				</table>
+	    			</td>
+	    			<td class="td-narrow">
+	    			</td>
+	    		</tr>
+	    		<tr>
+	    			<td class="td-narrow">
+	    			</td>
+	    			<td class="td-specical">
+	   	 				<table class="buttons table-special">
+	  	 					<tr>
+	    						<td id="result_box" width=70% align="center" valign="center" height="75px"> 
+									<h3 class="h-special" id="resultMessage"></h3>
+				    			  	<button type="button" class="submit_name_button" valign="center" id="submit_1">Submit</button>
+				    			</td>
+	  	 					</tr>
+	  	 				</table>
+		 			</td>
+		 			<td class="td-narrow">
+	    			</td>
+	    		</tr>
+	    		<tr>
+	    			<td class="td-narrow">
+	    			</td>
+	    			<td class="td-specical">
+				    		<button type="button" class="restart_button" id="restart">Restart Game</button>
+	 		 			</td>
+		 			<td>
+	    			</td>
+	    		</tr>
+	    	</table>
     	</div>
+
+		<div class="container">
+	    	<div id="powered-by" style="width: 100px">
+		    	<p>Powered by:</p>
+		    </div>
+		    <div>
+           		<a href='http://en.wikipedia.org/wiki/Test-driven_development'> 
+                	<img src="images/footer/tdd_small.png" style="margin-top: 2px;" />
+            	</a>
+		    </div>
+		    <div>
+           		<a href='http://jasmine.github.io/2.0/introduction.html'> 
+                	<img src="images/footer/jasmine_small.png" style="margin-top: 0px;" />
+            	</a>
+		    </div>
+		    <div>
+           		<a href='http://jquery.com/'> 
+                	<img src="images/footer/jquery_small.png" />
+            	</a>
+		    </div>
+		    <div>
+		    	<a href='http://www.w3schools.com/html/html5_intro.asp'> 
+                	<img src="images/footer/html5_small.png" />
+            	</a>
+		    </div>	
+		    <div>
+		    	<a href='http://www.w3.org/TR/2001/WD-css3-roadmap-20010523/'>
+                	<img src="images/footer/css3_small.png" />
+            	</a>
+		    </div>
+		    <div>
+		    	<a href='http://www.sinatrarb.com/'>                 
+                	<img src="images/footer/sinatra_small.png" style="margin-top: 2px;" />
+            	</a>
+		    </div>
+		    <div>
+           		<a href='https://www.heroku.com'> 
+                	<img src="images/footer/heroku_small.png" />
+            	</a>
+		    </div>
+		    <div>
+		    	<a href='https://github.com/nadavmatalon/rock-paper-scissors-lizard-spock'>
+                	<img src="images/footer/github_small.png" width="57px" height="57px" style="margin-top: 1px;" />
+            	</a>
+		    </div>
+		    <div id="written-by" style="width: 180px">
+		    	<span>Written by:</span>
+       			<a href='https://github.com/nadavmatalon'> 
+            		<img src="images/footer/nmqr_small.png" width="55px" height="55px" style="margin-top: 4px;" />
+        		</a>		    	
+		    </div>
+		</div>
+
     	<script src='lib/RockPaperScissorsLizardSpock.js'></script>
     	<script src='lib/jquery-2.1.1.min.js'></script>
     	<script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>

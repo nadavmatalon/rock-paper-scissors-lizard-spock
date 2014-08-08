@@ -4,7 +4,7 @@ body {
 	background-color: white;
 }
 
-div {
+.div-special {
 	margin: auto;
 	width: 75%;
 	height: 90%;
@@ -22,6 +22,18 @@ h3 {
 	padding-top: 20px;
 	display: none;
 	vertical-align: center;
+}
+
+.h-special {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	display: none;
+	vertical-align: center;
+}
+
+.main-frame {
+	border: 1px solid black;
+	height: 78%;
 }
 
 #resultMessage {
@@ -75,12 +87,56 @@ input {
 .framework {
 	width: 100%;
 	text-align: center;
-	margin-top: 5%;
+	/*margin-top: 2%;*/
+	padding: 20px;
+	vertical-align: center;
 }
 
-img {
+.td-narrow {
+	width: 15%;
+}
+
+.td-wide {
+	width: 70%;
+}
+
+.page-title {
+	padding-top: 15px;
+	padding-bottom: 20px;
+	word-spacing: 2px;
+}
+
+.td-special {
+	width: 70%;
+	align: center;
+	vertical-align: center;
+	height: 65px;
+}
+
+.tr-new {
+	text-align: center;
+	text-align: -webkit-center;
+}
+
+.tr-special {
+	height: 40px;
+	vertical-align: center;
+	padding: 100px;
+}
+
+.table-special {
+	height: 40px;
+ 	width: 100%;
+ 	vertical-align: center;
+}
+
+.game-img {
 	opacity: 0.8;
 	border-radius: 80px;
+}
+
+.choices {
+	width: 100%;
 }
 
 .choices img:hover {
@@ -121,5 +177,48 @@ img {
 
 #submit_1 {
 	vertical-align: "center";
+}
+
+
+.container {
+	border: 1px solid rgb(50, 50, 50);
+    text-align: center;
+    margin: 0px auto;
+    width: 75%;
+    box-shadow: 8px 8px 4px lightgray;
+	height: 86px;
+	margin-top: 20px;
+	margin-bottom: 40px;
+	min-width: 75%;
+}
+
+.container > div {
+ 	display: inline-block;
+	margin-top: 13px;
+	height: 60px;
+	width: 72px;
+	vertical-align: -webkit-baseline-middle;
+	vertical-align: bottom;
+}
+
+
+#powered-by > p {
+	font-size: 1.04em;
+	font-weight: 600;
+	padding-top: 4px;
+}
+
+#written-by > span {
+	font-size: 1.04em;
+	font-weight: 600;
+	padding-top: 4px;
+    float: left;
+    margin-top: 17px;
+    margin-left: 10px;
+
+}
+
+#written-by > a > img {
+	margin-left: 10px;
 }
 
