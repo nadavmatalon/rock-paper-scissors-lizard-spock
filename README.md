@@ -1,10 +1,17 @@
 <h1>Rock • Paper • Scissors • Lizard • Spock</h1>
 
+
+## Table of Contents
+
+* [App Screenshot](#app-screenshot)
+* [General Description](#general-description)
+
+
+## App Screenshot
+
 ![](javascript/public/images/screenshot.png "app-screenshot")
 
-<h3>Description</h3><br/>
-
-<p><strong>Bookmark Manager</strong> </p>
+##  General Description
 
 <p>This app was created as an exercise in buiding a complete JavaScript 
 web application, using Jquery functionality and TDD methodology
