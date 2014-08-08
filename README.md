@@ -58,11 +58,15 @@ and after the two choice are made, the result is shown on the screen.</p>
 <table>
 	<td>
 		<tr>
+			<div>
 			<img style="float: right" src="javascript/public/images/footer/heroku_small.png" />
+			</div>
 		</tr>
 		<tr>
+			<p>
 			A live version of the game can be found (and played!) at:
-			http://makers-rock-paper-scissors.herokuapp.com</p>
+			http://makers-rock-paper-scissors.herokuapp.com
+			</p>
 		</tr>
 	</td>
 </table>
