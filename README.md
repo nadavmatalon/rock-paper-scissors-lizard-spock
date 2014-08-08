@@ -53,7 +53,12 @@ super computer 'Deep Though'.</p>
 and after the two choice are made, the result is shown on the screen.</p>
 
 
-<h3>See it Live on Heroku</h3><br/>
+<h3>
+
+![](javascript/public/images/footer/heroku_small.png "Heroku")
+
+
+See it Live on Heroku</h3><br/>
 
 <p>A live version of the game can be found (and played!) at:</p>
 
