@@ -53,16 +53,14 @@ super computer 'Deep Though'.</p>
 and after the two choice are made, the result is shown on the screen.</p>
 
 
-<h3>
+<h3>See it Live on Heroku</h3><br/>
 
-![](javascript/public/images/footer/heroku_small.png "Heroku")
+<p>![](javascript/public/images/footer/heroku_small.png "Heroku")
 
 
-See it Live on Heroku</h3><br/>
+<span>A live version of the game can be found (and played!) at:</span><br/>
 
-<p>A live version of the game can be found (and played!) at:</p>
-
-<p>http://makers-rock-paper-scissors.herokuapp.com</p>
+<span>http://makers-rock-paper-scissors.herokuapp.com</span></p>
 
 
 <h3>Browser Caveate</h3><br/>
