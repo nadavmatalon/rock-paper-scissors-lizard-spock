@@ -55,17 +55,12 @@ and after the two choice are made, the result is shown on the screen.</p>
 
 <h3>See it Live on Heroku</h3>
 
-<table>
-	<td>
-		<tr>	
-			<img style="float: left;" src="javascript/public/images/footer/heroku_small.png" />
-		</tr>
-		<tr>		
-			A live version of the game can be found (and played!) at:
-			http://makers-rock-paper-scissors.herokuapp.com		
-		</tr>
-	</td>
-</table>
+<img src="javascript/public/images/footer/heroku_small.png" style="float: left;">
+A live version of the game can be found (and played!) at:
+http://makers-rock-paper-scissors.herokuapp.com		
+
+
+
 <h3>Browser Caveate</h3><br/>
 
 <p>Please note that this app has been optimized primarily for <strong>Google Chrome</strong>, 
