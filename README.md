@@ -55,9 +55,9 @@ and after the two choice are made, the result is shown on the screen.</p>
 
 <h3>See it Live on Heroku</h3>
 
-<img src="javascript/public/images/footer/heroku_small.png" style="float: left;">
+<p><img src="javascript/public/images/footer/heroku_small.png" style="float: left;" />
 A live version of the game can be found (and played!) at:
-http://makers-rock-paper-scissors.herokuapp.com		
+http://makers-rock-paper-scissors.herokuapp.com</p>	
 
 
 
