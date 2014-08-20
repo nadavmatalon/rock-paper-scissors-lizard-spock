@@ -29,16 +29,16 @@ The present app actualizes a slightly more sophisticated version of the game whi
 two additional characters: __the lizard__ and __Spock__.
 
 The app also gives the option of playing the game either with two players or against the 
-supercomputer [Deep Though](http://en.wikipedia.org/wiki/Deep_Thought_(The_Hitchhiker%27s_Guide_to_the_Galaxy)#Deep_Thought).
+supercomputer [Deep Thought](http://en.wikipedia.org/wiki/Deep_Thought_(The_Hitchhiker%27s_Guide_to_the_Galaxy)#Deep_Thought).
 
 
 ##How to Play
 
-<p>First, select game mode: __Player vs Deep Thought__ or __Player vs Player__</p>
+* First, select game mode: __Player vs Deep Thought__ or __Player vs Player__
 
-<p>Next, enter name/s of player/s</p>
+* Next, enter name/s of player/s
 
-<p>Here's a quick overview of the rules:</p>
+* For those who haven't played the game before, here's a quick overview of the rules:
 
 <ul>
 	<li>Scissors cut Paper</li>
@@ -55,20 +55,21 @@ supercomputer [Deep Though](http://en.wikipedia.org/wiki/Deep_Thought_(The_Hitch
 
 (Source: [Wikipedia on Rock Paper Scissors](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock))
 
-<p>And now it's game time:</p>
+And now it's game time:
 
-<p>If in single player mode: simply click on an image to make your choice 
-(Deep Thought is very fast - it has alredy made its choice).</p>
+* If in single player mode: simply click on an image to make your choice 
+([Deep Thought](http://en.wikipedia.org/wiki/Deep_Thought_(The_Hitchhiker%27s_Guide_to_the_Galaxy)#Deep_Thought) 
+is very fast - it has alredy made its choice).
 
-<p>If in dual player mode: each player should click on an image in turn
-and after the two choice are made, the result is shown on the screen.</p>
+* If in dual player mode: each player should click on an image in turn and after the 
+two choice are made, the result is shown on the screen.
 
 
 ##See it Live on Heroku
 			
 A live version of the game can be found (and played!) at:
 
-__http://makers-rock-paper-scissors.herokuapp.com__
+http://makers-rock-paper-scissors.herokuapp.com
 
 As I'm using Heroku's free hosting service, the app may take a bit of time to upload<br/>
 (Heroku's giros take time to wake up...), so please be patient.
