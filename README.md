@@ -39,16 +39,16 @@ supercomputer [Deep Thought](http://en.wikipedia.org/wiki/Deep_Thought_(The_Hitc
 * Next, enter name/s of player/s
 
 * For those who haven't played the game before, here's a quick overview of the rules:
-** Scissors __cut__ Paper
-** Paper __covers__ Rock
-** Rock __crushes__ Lizard
-** Lizard __poisons__ Spock
-** Spock __smashes__ Scissors
-** Scissors __decapitate__ Lizard
-** Lizard __eats__ Paper
-** Paper __disproves__ Spock
-** Spock __vaporizes__ Rock
-** Rock __crushes__ Scissors
+    *  Scissors __cut__ Paper
+    *  Paper __covers__ Rock
+    *  Rock __crushes__ Lizard
+    *  Lizard __poisons__ Spock
+    *  Spock __smashes__ Scissors
+    *  Scissors __decapitate__ Lizard
+    *  Lizard __eats__ Paper
+    *  Paper __disproves__ Spock
+    *  Spock __vaporizes__ Rock
+    *  Rock __crushes__ Scissors
 
 (Source: [Wikipedia on Rock Paper Scissors](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock))
 
