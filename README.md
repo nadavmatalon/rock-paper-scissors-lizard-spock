@@ -18,7 +18,7 @@
 ##General Description
 
 This app was created as an exercise in buiding a complete JavaScript web application, 
-using Jquery functionality and TDD methodology (testing was done with `Jasmine`). 
+using jQuery functionality and TDD methodology (testing was done with `Jasmine`). 
 
 The starting point for this project was provided by Alex Peattie (a coach at Makers) and 
 consisted of a sample code both in Ruby and JavaScript for the original game, 
