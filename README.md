@@ -53,7 +53,7 @@ supercomputer [Deep Though](http://en.wikipedia.org/wiki/Deep_Thought_(The_Hitch
 	<li>Rock crushes Scissors</li>
 </ul>
 
-<p>(Source: [Wikipedia on Rock Paper Scissors](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock))</p>
+(Source: [Wikipedia on Rock Paper Scissors](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock))
 
 <p>And now it's game time:</p>
 
@@ -68,7 +68,7 @@ and after the two choice are made, the result is shown on the screen.</p>
 			
 A live version of the game can be found (and played!) at:
 
-http://makers-rock-paper-scissors.herokuapp.com
+__http://makers-rock-paper-scissors.herokuapp.com__
 
 As I'm using Heroku's free hosting service, the app may take a bit of time to upload<br/>
 (Heroku's giros take time to wake up...), so please be patient.
@@ -76,18 +76,15 @@ As I'm using Heroku's free hosting service, the app may take a bit of time to up
 
 ##Browsers
 
-This app has been tested with and supports the following browsers:
+This app has been tested with and supports the following browsers (though
+it should hopefully look decent in other browsers as well):
 
 * __Google Chrome__ (36.0)
 * __Apple Safari__ (7.0.5)
 * __Mozilla Firefox__ (31.0)
 
-However, it should (hopefully) look decent in other browsers as well.
-
 
 ##Testing
-
-##  Testing
 
 Tests were written with Rspec (3.0.3) for the Ruby-side & Jasmine (2.0.0) for the 
 JavaScript-side.
