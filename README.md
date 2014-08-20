@@ -1,41 +1,40 @@
-<h1>Rock • Paper • Scissors • Lizard • Spock</h1>
+#Rock • Paper • Scissors • Lizard • Spock
 
-
-## Table of Contents
+##Table of Contents
 
 * [App Screenshot](#app-screenshot)
 * [General Description](#general-description)
 * [How to Play](#how-to-play)
 * [See it Live on Heroku](#see-it-live-on-heroku)
-* [Browser Caveate](#browser-caveate)
+* [Browsers](#browsers)
 * [Testing](#testing)
 
 
+##App Screenshot
 
-## App Screenshot
-
-![](javascript/public/images/screenshot.png "app-screenshot")
-
-##  General Description
-
-<p>This app was created as an exercise in buiding a complete JavaScript 
-web application, using Jquery functionality and TDD methodology
-(testing was done with Jasmine).</p> 
-
-<p>The starting point for this project was provided by Alex Peattie (a coach at Makers) and
-consisted of a sample code both in Ruby and JavaScript for the original game, 'rock paper scissors' 
-(Alex's code can be found here: https://github.com/alexmakers/rockpaperscissors).</p>
-
-<p>The present code actualizes a slightly more sophisticated version of the game
-which includes two additional characters: the lizard and Spock.</p>
-
-<p>The app gives the option of playing the game either with two players or agaist the 
-super computer 'Deep Though'.</p>
+![Rock • Paper • Scissors • Lizard • Spock](javascript/public/images/screenshot.png)
 
 
-##  How to Play
+##General Description
 
-<p>First, select game mode: 'Player vs Deep Thought' or Player vs Player</p>
+This app was created as an exercise in buiding a complete JavaScript web application, 
+using Jquery functionality and TDD methodology (testing was done with `Jasmine`). 
+
+The starting point for this project was provided by Alex Peattie (a coach at Makers) and 
+consisted of a sample code both in Ruby and JavaScript for the original game, 
+'rock paper scissors' (Alex's code can be found 
+[here](https://github.com/alexmakers/rockpaperscissors)).
+
+The present app actualizes a slightly more sophisticated version of the game which includes 
+two additional characters: __the lizard__ and __Spock__.
+
+The app also gives the option of playing the game either with two players or against the 
+supercomputer [Deep Though](http://en.wikipedia.org/wiki/Deep_Thought_(The_Hitchhiker%27s_Guide_to_the_Galaxy)#Deep_Thought).
+
+
+##How to Play
+
+<p>First, select game mode: __Player vs Deep Thought__ or __Player vs Player__</p>
 
 <p>Next, enter name/s of player/s</p>
 
@@ -54,7 +53,7 @@ super computer 'Deep Though'.</p>
 	<li>Rock crushes Scissors</li>
 </ul>
 
-<p>(Source: http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock)</p>
+<p>(Source: [Wikipedia on Rock Paper Scissors](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock))</p>
 
 <p>And now it's game time:</p>
 
@@ -65,33 +64,46 @@ super computer 'Deep Though'.</p>
 and after the two choice are made, the result is shown on the screen.</p>
 
 
-##  See it Live on Heroku
+##See it Live on Heroku
 			
-<p>A live version of the game can be found (and played!) at:</p> 
-<p>http://makers-rock-paper-scissors.herokuapp.com</p>
+A live version of the game can be found (and played!) at:
+
+http://makers-rock-paper-scissors.herokuapp.com
+
+As I'm using Heroku's free hosting service, the app may take a bit of time to upload<br/>
+(Heroku's giros take time to wake up...), so please be patient.
 
 
-##  Browser Caveate
+##Browsers
 
-<p>Please note that this app has been optimized primarily for <strong>Google Chrome</strong>, 
-and to a lesser extent <strong>Apple Safari</strong>. However. it should look decent on other
-browsers as well.</p>
+This app has been tested with and supports the following browsers:
 
+* __Google Chrome__ (36.0)
+* __Apple Safari__ (7.0.5)
+* __Mozilla Firefox__ (31.0)
+
+However, it should (hopefully) look decent in other browsers as well.
+
+
+##Testing
 
 ##  Testing
 
-<p>Tests were written with Rspec (for Ruby side) & Jasmine (for JavaScript side).</p>
+Tests were written with Rspec (3.0.3) for the Ruby-side & Jasmine (2.0.0) for the 
+JavaScript-side.
 
-<p>To run the tests for Ruby in terminal:</p>
-<p>$ cd ruby</p>
-<o>$ rspec</p>
+To run the Rspec tests in terminal for the Ruby-side:
 
-<p>Rspec version: 3.0.3</p>
+```bash
+$ cd ruby
+$ rspec
+```
 
-<p>To run the tests for Javascript in a browser:</p>
+To run the Jasmine tests in a browser for the Javascript-side:
 
-<p>In Finder, go to the /javascript directory, and double-click the 'SpecRunner.html' file.</p>
-
-<p>Jasmine version: 2.0.0</p>
+* In 'Finder', go to the `/javascript` directory, and double-click the `SpecRunner.html` file.
 
 
+##License
+
+<p>Released under the <a href="http://www.opensource.org/licenses/MIT">MIT license</a>.</p>
