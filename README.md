@@ -114,15 +114,20 @@ JavaScript-side.
 To run the Rspec tests in terminal for the Ruby-side:
 
 ```bash
-$ cd ruby
+$ cd rock-paper-scissors-lizard-spock/ruby
 $ rspec
 ```
 
 To run the Jasmine tests in a browser for the Javascript-side:
 
-* In 'Finder', go to the `/javascript` directory, and double-click the `SpecRunner.html` file.
+To run the tests, clone the repo to a local folder and run:
 
+```bash
+$ cd rock-paper-scissors-lizard-spock
+$ open ./javascript/SpecRunner.html
+```
 
 ##License
 
 <p>Released under the <a href="http://www.opensource.org/licenses/MIT">MIT license</a>.</p>
+
