@@ -118,9 +118,7 @@ $ cd rock-paper-scissors-lizard-spock/ruby
 $ rspec
 ```
 
-To run the Jasmine tests in a browser for the Javascript-side:
-
-To run the tests, clone the repo to a local folder and run:
+To run the Jasmine tests for the JavaScript-side, run:
 
 ```bash
 $ cd rock-paper-scissors-lizard-spock
