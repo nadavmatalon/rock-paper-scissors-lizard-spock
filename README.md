@@ -91,7 +91,7 @@ it should hopefully look decent in other browsers as well):
 ##Testing
 
 Tests were written with [Rspec (3.0.3)](http://rspec.info) for the Ruby-side & 
-[Jasmine (2.0.0)](http://jasmine.github.io/2.0/introduction.html)for the 
+[Jasmine (2.0.0)](http://jasmine.github.io/2.0/introduction.html) for the 
 JavaScript-side.
 
 To run the Rspec tests in terminal for the Ruby-side:
