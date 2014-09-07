@@ -8,6 +8,7 @@
 * [See it Live on Heroku](#see-it-live-on-heroku)
 * [Browsers](#browsers)
 * [Testing](#testing)
+* [License](#license)
 
 
 ##App Screenshot
