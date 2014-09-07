@@ -4,6 +4,7 @@
 
 * [App Screenshot](#app-screenshot)
 * [General Description](#general-description)
+* [How to Run the Game](#how-to-run-the-game)
 * [How to Play](#how-to-play)
 * [See it Live on Heroku](#see-it-live-on-heroku)
 * [Browsers](#browsers)
@@ -36,6 +37,22 @@ two additional characters: __the lizard__ and __Spock__.
 
 The app also gives the option of playing the game either with two players or against the 
 supercomputer [Deep Thought](http://en.wikipedia.org/wiki/Deep_Thought_(The_Hitchhiker%27s_Guide_to_the_Galaxy)#Deep_Thought).
+
+
+##How to Run the Game
+
+Clone the repo to a local folder and run:
+
+```bash
+$ cd rock-paper-scissors-lizard-spock
+$ bundle
+$ shotgun
+```
+
+Then open the browser of your choice and go to:
+```
+http://localhost:9393/
+```
 
 
 ##How to Play
