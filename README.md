@@ -18,13 +18,18 @@
 
 ##General Description
 
-This app was created as an exercise in buiding a complete JavaScript web application, 
-using jQuery functionality and TDD methodology (testing was done with `Jasmine`). 
+This app was created as an exercise in buiding a complete 
+[JavaScript](http://en.wikipedia.org/wiki/JavaScript) web application, 
+using [jQuery](http://jquery.com) functionality and 
+[TDD](http://en.wikipedia.org/wiki/Test-driven_development) 
+methodology (tests were written with 
+[Jasmine](http://jasmine.github.io/2.0/introduction.html)). 
 
 The starting point for this project was provided by Alex Peattie (a coach at Makers) and 
-consisted of a sample code both in Ruby and JavaScript for the original game, 
-'rock paper scissors' (Alex's code can be found 
-[here](https://github.com/alexmakers/rockpaperscissors)).
+consisted of a sample code both in [Ruby](https://www.ruby-lang.org/en/) 
+and [JavaScript](http://en.wikipedia.org/wiki/JavaScript) 
+for the original game, [rock-paper-scissors](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock) 
+(Alex's code can be found [here](https://github.com/alexmakers/rockpaperscissors)).
 
 The present app actualizes a slightly more sophisticated version of the game which includes 
 two additional characters: __the lizard__ and __Spock__.
@@ -85,7 +90,8 @@ it should hopefully look decent in other browsers as well):
 
 ##Testing
 
-Tests were written with Rspec (3.0.3) for the Ruby-side & Jasmine (2.0.0) for the 
+Tests were written with [Rspec (3.0.3)](http://rspec.info) for the Ruby-side & 
+[Jasmine (2.0.0)](http://jasmine.github.io/2.0/introduction.html)for the 
 JavaScript-side.
 
 To run the Rspec tests in terminal for the Ruby-side:
