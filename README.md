@@ -43,7 +43,7 @@ supercomputer [Deep Thought](http://en.wikipedia.org/wiki/Deep_Thought_(The_Hitc
             
 A live version of the app can be found at:
 
-[Rock • Paper • Scissors • Lizard • Spock on Github.io](http://nadavmatalon.github.io/rock-paper-scissors-lizard-spock/)
+[Rock-Paper-Scissors-Lizard-Spock on Github.io](http://nadavmatalon.github.io/rock-paper-scissors-lizard-spock/)
 
 
 ##How to Run the Game Locally
