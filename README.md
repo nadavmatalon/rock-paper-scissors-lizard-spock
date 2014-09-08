@@ -14,7 +14,7 @@
 
 ##App Screenshot
 
-![Rock • Paper • Scissors • Lizard • Spock](images/screenshot.png)
+![Rock • Paper • Scissors • Lizard • Spock](https://raw.githubusercontent.com/nadavmatalon/rock-paper-scissors-lizard-spock/gh-pages/images/screenshot.png)
 
 
 ##General Description
