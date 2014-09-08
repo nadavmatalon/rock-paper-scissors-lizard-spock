@@ -4,9 +4,9 @@
 
 * [App Screenshot](#app-screenshot)
 * [General Description](#general-description)
-* [How to Run the Game](#how-to-run-the-game)
+* [See it Live on Github](#see-it-live-on-github)
+* [How to Run the Game Locally](#how-to-run-the-game-locally)
 * [How to Play](#how-to-play)
-* [See it Live on Heroku](#see-it-live-on-heroku)
 * [Browsers](#browsers)
 * [Testing](#testing)
 * [License](#license)
@@ -39,7 +39,14 @@ The app also gives the option of playing the game either with two players or aga
 supercomputer [Deep Thought](http://en.wikipedia.org/wiki/Deep_Thought_(The_Hitchhiker%27s_Guide_to_the_Galaxy)#Deep_Thought).
 
 
-##How to Run the Game
+##See it Live on Github
+            
+A live version of the app can be found at:
+
+[Rock • Paper • Scissors • Lizard • Spock on Github.io](http://nadavmatalon.github.io/rock-paper-scissors-lizard-spock/)
+
+
+##How to Run the Game Locally
 
 Clone the repo to a local folder and run:
 
@@ -83,16 +90,6 @@ is very fast - it has alredy made its choice).
 
 * If in dual player mode: each player should click on an image in turn and after the 
 two choice are made, the result is shown on the screen.
-
-
-##See it Live on Heroku
-			
-A live version of the game can be found (and played!) at:
-
-http://makers-rock-paper-scissors.herokuapp.com
-
-As I'm using Heroku's free hosting service, the app may take a bit of time to upload<br/>
-(Heroku's giros take time to wake up...), so please be patient.
 
 
 ##Browsers
