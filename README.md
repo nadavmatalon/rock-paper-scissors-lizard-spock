@@ -38,10 +38,11 @@ two additional characters: __the lizard__ and __Spock__.
 The app also gives the option of playing the game either with two players or against the 
 supercomputer [Deep Thought](http://en.wikipedia.org/wiki/Deep_Thought_(The_Hitchhiker%27s_Guide_to_the_Galaxy)#Deep_Thought).
 
+  
 
 ##See it Live on Github
             
-A live version of the app can be found at:
+A live version of the app can be found (and played!) at:
 
 [Rock-Paper-Scissors-Lizard-Spock on Github.io](http://nadavmatalon.github.io/rock-paper-scissors-lizard-spock/)
 
