@@ -14,7 +14,7 @@
 
 ##App Screenshot
 
-![Rock • Paper • Scissors • Lizard • Spock](/images/screenshot.png)
+![Rock • Paper • Scissors • Lizard • Spock](images/screenshot.png)
 
 
 ##General Description
@@ -41,10 +41,12 @@ supercomputer [Deep Thought](http://en.wikipedia.org/wiki/Deep_Thought_(The_Hitc
 
 ##See it Live on Github
             
-A live version of the app can be found at:
+A live version of the app can be found (and played!) at:
 
-[Rock • Paper • Scissors • Lizard • Spock on Github.io](http://nadavmatalon.github.io/rock-paper-scissors-lizard-spock/)
+[Rock-Paper-Scissors-Lizard-Spock on Github.io](http://nadavmatalon.github.io/rock-paper-scissors-lizard-spock/)
+  
 
+    
 
 ##How to Run the Game Locally
 
