@@ -1,1 +1,666 @@
-My GitHub Page
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock • Paper • Scissors • Lizard • Spock</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+        <style>
+            body {
+                margin-top: 2%;
+                background-color: white;
+            }
+
+            .div-special {
+                margin: auto;
+                width: 75%;
+                height: 90%;
+                border: 1px solid;
+                border-color: black;
+                box-shadow: 8px 8px 4px lightgray;
+                display: table;
+            }
+
+            h1 {
+                margin-top: 20px;
+            }
+
+            h3 {
+                padding-top: 20px;
+                display: none;
+                vertical-align: center;
+            }
+
+            .h-special {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                display: none;
+                vertical-align: center;
+            }
+
+            .main-frame {
+                border: 1px solid black;
+                height: 78%;
+            }
+
+            #resultMessage {
+                vertical-align: center;
+                display: none;
+                color: purple;
+            }
+
+            .result_bg {
+                background-color: gray;
+            }
+
+            button {
+
+                height: 40px;
+                width: 150px;
+                color: black;
+                text-align: center;
+                line-height: 12px;
+                font-size: 12px;
+                display: none;
+            }
+
+
+            button:hover {
+
+                height: 40px;
+                color: orange;
+                text-align: center;
+                line-height: 12px;
+                font-size: 12px;
+                display: none;
+            }
+
+            #one_player {
+                width: 180px;
+            }
+
+            #two_players {
+                width: 180px;
+            }
+
+            input {
+                height: 25px;
+                width: 180px;
+                font-size: 12px;
+                display: none;
+                vertical-align: top;
+            }
+
+            .framework {
+                width: 100%;
+                text-align: center;
+                /*margin-top: 2%;*/
+                padding: 20px;
+                vertical-align: center;
+            }
+
+            .td-narrow {
+                width: 15%;
+            }
+
+            .td-wide {
+                width: 70%;
+            }
+
+            .page-title {
+                padding-top: 15px;
+                padding-bottom: 20px;
+                word-spacing: 2px;
+            }
+
+            .td-special {
+                width: 70%;
+                align: center;
+                vertical-align: center;
+                height: 65px;
+            }
+
+            .tr-new {
+                text-align: center;
+                text-align: -webkit-center;
+            }
+
+            .tr-special {
+                height: 40px;
+                vertical-align: center;
+                padding: 100px;
+            }
+
+            .table-special {
+                height: 40px;
+                width: 100%;
+                vertical-align: center;
+            }
+
+            .game-img {
+                opacity: 0.8;
+                border-radius: 80px;
+            }
+
+            .choices {
+                width: 100%;
+            }
+
+            .choices img:hover {
+                opacity: 1;
+                border-radius: 80px;
+            }
+
+            .submit_name_button {
+                display: none;
+            }
+
+            #results_box {
+                list-style: none;
+                vertical-align: center;
+                margin-top: 20px;
+                }
+
+            #results_box li {
+                background: #999;
+                color: #fff;
+                text-align: center;
+                font-size: 24px;
+                border-radius: 8px;
+                padding: 5px;
+                width: 50%;
+                margin-bottom: 1%;
+                display: none;
+            }
+
+            #first_box, #second_box {
+                font-size: 18px;
+                font-weight: 800;
+            }
+
+            #restart {
+                display: none;
+            }
+
+            #submit_1 {
+                vertical-align: "center";
+            }
+
+
+            .container {
+                border: 1px solid rgb(50, 50, 50);
+                text-align: center;
+                margin: 0px auto;
+                width: 75%;
+                box-shadow: 8px 8px 4px lightgray;
+                height: 86px;
+                margin-top: 20px;
+                margin-bottom: 40px;
+                min-width: 75%;
+            }
+
+            .container > div {
+                display: inline-block;
+                margin-top: 13px;
+                height: 60px;
+                width: 72px;
+                vertical-align: -webkit-baseline-middle;
+                vertical-align: bottom;
+            }
+
+
+            #powered-by > p {
+                font-size: 1.04em;
+                font-weight: 600;
+                padding-top: 4px;
+            }
+
+            #written-by > span {
+                font-size: 1.04em;
+                font-weight: 600;
+                padding-top: 4px;
+                float: left;
+                margin-top: 17px;
+                margin-left: 10px;
+
+            }
+
+            #written-by > a > img {
+                margin-left: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="div-special main-frame">
+            <table class="framework">
+                <tr>
+                    <td class="td-narrow">
+                    </td>
+                    <td class="td-wide page-title">
+                        <h1>
+                            <span>Rock  Paper  Scissors  Lizard  Spock</span>
+                        </h1>
+                    </td class="td-narrow">
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-narrow">
+                    </td>
+                    <td class="td-wide">
+                        <table class="choices">
+                            <tr>
+                                <td align="center">
+                                    <img class="game-img" src="images/rock.png" data-pick='rock'>
+                                </td>
+                                <td align="center">
+                                    <img class="game-img" src="images/paper.png" data-pick='paper'>
+                                </td>
+                                <td align="center">
+                                    <img class="game-img" src="images/scissors.png" data-pick='scissors'>
+                                </td>
+                                <td align="center">
+                                    <img class="game-img" src="images/lizard.png" data-pick='lizard'>
+                                </td>
+                                <td align="center">
+                                    <img class="game-img" src="images/spock.png" data-pick='spock'>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="td-narrow">
+                    </td>
+                </tr>
+                <tr class="tr-special">
+                    <td class="td-narrow">
+                    </td>
+                    <td class="td-specical"> 
+                        <h3 id="message"></h3>
+                    </td>
+                    <td class="td-narrow">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-narrow">
+                    </td>
+                    <td class="td-wide">
+                        <table class="buttons table-special">
+                            <tr>
+                                <td id="first_box" align="center" width=50% valign="center" height="65px">
+                                    <p><button type="button" class="gameModeButton" id="one_player">Player vs Deep Thought</button></p>
+                                    <p><input type="text" class="player_name" placeholder="Player One" id="player1_name" required="true" autofocus></input> </p> 
+                                </td>
+                                <td id="second_box" valign= "center" align="center" height="65px">
+                                    <p><button type="button" class="gameModeButton" id="two_players">Player vs Player</button></p>
+                                    <p><input type="text" class="player_name" placeholder="Player Two" id="player2_name" required></input></p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="td-narrow">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-narrow">
+                    </td>
+                    <td class="td-specical">
+                        <table class="buttons table-special">
+                            <tr>
+                                <td id="result_box" width=70% align="center" valign="center" height="75px"> 
+                                    <h3 class="h-special" id="resultMessage"></h3>
+                                    <button type="button" class="submit_name_button" valign="center" id="submit_1">Submit</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="td-narrow">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-narrow">
+                    </td>
+                    <td class="td-specical">
+                            <button type="button" class="restart_button" id="restart">Restart Game</button>
+                        </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="container">
+            <div id="powered-by" style="width: 100px">
+                <p>Powered by:</p>
+            </div>
+            <div>
+                <a href='http://en.wikipedia.org/wiki/Test-driven_development'> 
+                    <img src="images/footer/tdd_small.png" style="margin-top: 2px;" />
+                </a>
+            </div>
+            <div>
+                <a href='http://jasmine.github.io/2.0/introduction.html'> 
+                    <img src="images/footer/jasmine_small.png" style="margin-top: 0px;" />
+                </a>
+            </div>
+            <div>
+                <a href='http://jquery.com/'> 
+                    <img src="images/footer/jquery_small.png" />
+                </a>
+            </div>
+            <div>
+                <a href='http://www.w3schools.com/html/html5_intro.asp'> 
+                    <img src="images/footer/html5_small.png" />
+                </a>
+            </div>  
+            <div>
+                <a href='http://www.w3.org/TR/2001/WD-css3-roadmap-20010523/'>
+                    <img src="images/footer/css3_small.png" />
+                </a>
+            </div>
+            <div>
+                <a href='http://www.sinatrarb.com/'>                 
+                    <img src="images/footer/sinatra_small.png" style="margin-top: 2px;" />
+                </a>
+            </div>
+            <div>
+                <a href='https://www.heroku.com'> 
+                    <img src="images/footer/heroku_small.png" />
+                </a>
+            </div>
+            <div>
+                <a href='https://github.com/nadavmatalon/rock-paper-scissors-lizard-spock'>
+                    <img src="images/footer/github_small.png" width="57px" height="57px" style="margin-top: 1px;" />
+                </a>
+            </div>
+            <div id="written-by" style="width: 180px">
+                <span>Written by:</span>
+                <a href='https://github.com/nadavmatalon'> 
+                    <img src="images/footer/nmqr_small.png" width="55px" height="55px" style="margin-top: 4px;" />
+                </a>                
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+
+        function Player(name) {
+            this.name = name;
+        };
+
+        Player.prototype.picks = function(pick) {
+            this.pick = pick;
+        };
+
+        function Game(player1, player2) {
+            this.player1 = player1;
+            this.player2 = player2;
+        };
+
+        Player.prototype.pick = function() {
+            this.pick;
+        }
+
+        Game.prototype.PAIRS = {
+            rock: {beats: ['scissors', 'lizard']},
+            paper: {beats: ['rock', 'spock']},
+            scissors: {beats: ['paper', 'lizard']},
+            lizard: {beats: ['paper', 'spock']},
+            spock: {beats: ['scissors', 'rock']}
+        };
+
+        Game.prototype._isSamePick = function() {
+            return this.player1.pick === this.player2.pick;
+        };
+
+        Game.prototype.winner = function() {
+            if (this._isSamePick()) return null;
+            return (this.PAIRS[this.player1.pick]['beats'].indexOf(this.player2.pick) > -1) ? this.player1 : this.player2;
+        };
+
+        Game.prototype.loser = function() {
+            return (this.winner() === this.player1) ? this.player2 : this.player1;
+        };
+
+        Game.prototype.winnerName = function() {
+            if (this.winner() === this.player1) {
+                return this.player1.name;
+            } else {
+                return this.player2.name;
+            };
+        };
+
+        Game.prototype.loserName = function() {
+            return (this.winnerName() === this.player1.name) ? this.player2.name : this.player1.name;
+        };
+
+        Game.prototype.isDraw = function() {
+            if(this.winner() === null) {
+                return 'draw';
+            };
+        };
+
+        Game.prototype.messageVerb = function() {
+
+            if (this.winnerPick('rock') && this.loserPick('scissors')) {
+                return 'crushes'
+            } else if (this.winnerPick('rock') && this.loserPick('lizard')) {
+                return 'crushes'
+            } else if (this.winnerPick('scissors') && this.loserPick('paper')) {
+                return 'cuts'
+            } else if (this.winnerPick('scissors') && this.loserPick('lizard')) {
+                return 'decapitates'
+            } else if (this.winnerPick('spock') && this.loserPick('scissors')) {
+                return 'smashes'
+            } else if (this.winnerPick('spock') && this.loserPick('rock')) {
+                return 'vapourises'
+            } else if (this.winnerPick('lizard') && this.loserPick('paper')) {
+                return 'eats'
+            } else if (this.winnerPick('lizard') && this.loserPick('spock')) {
+                return 'poisons'
+            } else if (this.winnerPick('paper') && this.loserPick('rock')) {
+                return 'covers'
+            } else if (this.winnerPick('paper') && this.loserPick('spock')) {
+                return 'disproves'
+            };
+        };
+
+        Game.prototype.winnerPick = function(selection) {
+            return this.winner().pick === selection;
+        };
+
+        Game.prototype.loserPick = function(selection) {
+            return this.loser().pick === selection;
+        };
+
+        Game.prototype.winningMessage = function() {
+          if (this.isDraw()) return "Draw";
+          var message = [this.winnerName(), this.messageVerb(), this.loserName()];
+          return message.join(" ");
+        };
+
+        Game.prototype.message = function(content) {
+            return content.val;
+        };
+
+        function playGame() {
+            $(document).ready(function() {
+                createNewGame();
+                selectGameMode();
+            });
+        };
+
+        function createNewGame() {
+            window.p1 = new Player("");
+            window.p2 = new Player("");
+            window.game = new Game(p1, p2);
+            window.message = "";
+            window.resultMessage="";
+            appendMainMessage();
+            resetPlayersPicks();
+        };
+
+        function appendMainMessage() {
+            $("#message").append("<h3>" + message + "</h3>");
+        };
+
+        function appendResultMessage() {
+            $("#result_box").append("<h3>" + resultMessage + "</h3>");
+        };
+
+        function resetPlayersPicks() {
+            p1.pick = null;
+            p2.pick = null;
+        };
+
+        function updateMainMessage(message) {
+                $('#message').fadeOut(200, function() {
+                $('#message').text(message).fadeIn(200);
+            });
+        };
+
+        function updateResultMessage(result_message) {
+            $('#resultMessage').fadeOut(200, function() {
+                $('#resultMessage').text(result_message).fadeIn(200);
+            });
+        };
+
+        function selectGameMode() {
+            $(".gameModeButton").fadeIn(200);
+            updateMainMessage("Welcome, please select game mode");
+
+            $('#one_player').on('click', function() {
+                setSinglePlayerMode();
+            });
+            $('#two_players').on('click', function() {
+                setTwoPlayersMode();
+            });
+        };
+        
+        function setSinglePlayerMode() {
+            setPlayersNames("single");
+            $("#submit_1").on('click', function() {
+                if ($('#player1_name').val() != "") {
+                        p1.name = $('#player1_name').val();
+                    $('#player1_name').fadeOut(function() {
+                        $(this).remove();
+                    });
+                    $("#submit_1").fadeOut(function() {
+                        $(this).remove(function(){
+                            appendResultMessage();
+                        });
+                    });
+                    $("#first_box").text(p1.name);
+                    playerVsComputer();
+                } else {
+                    updateMainMessage("Please enter name to begin");
+                };
+            });
+        };
+
+        function setTwoPlayersMode() {
+            name_one_check = false;
+            name_two_check = false;
+            setPlayersNames("twoPlayers");
+            $('#submit_1').on('click', function() {
+                if ($('#player1_name').val() != "" && !name_one_check) {
+                    p1.name = $('#player1_name').val();
+                    $('#player1_name').fadeOut();
+                    $('#first_box').text(p1.name);
+                    name_one_check = true;
+                };  
+                if ($('#player2_name').val() != "" && !name_two_check) {
+                    p2.name = $('#player2_name').val();
+                    $('#player2_name').fadeOut();
+                    $('#second_box').text(p2.name);
+                    name_two_check = true;
+                };
+                if (name_one_check && name_two_check) {                                 
+                    $('#submit_1').fadeOut(function(){
+                        $(this).remove(function(){
+                            appendResultMessage();
+                        });
+                    });
+                    playerVsPlayer();
+                } else {
+                    updateMainMessage("Please enter both names to begin");
+                };
+            });
+        };
+
+        function setPlayersNames(mode) {
+            $('.gameModeButton').remove();
+            $('#player1_name').fadeIn();
+            $('#submit_1').fadeIn();
+            if (mode === "single") {
+                updateMainMessage("Please enter your name:");
+                p2.name = "Deep Thought";
+                $('#second_box').text(p2.name);
+            };
+            if (mode === "twoPlayers") {
+                updateMainMessage("Please enter your names:");
+                $('#player2_name').fadeIn(200); 
+            };
+        };
+
+        function playerVsComputer() {
+            updateMainMessage(p1.name + " , click on image to make your move!");
+            $('#restart').fadeIn(200);
+            $('.choices img').on('click', function() {
+                p1.picks($(this).data('pick'));
+                p2.picks(randomPick());
+                showWinningMessage();
+                showPicksAndWinningMessageInConsole();
+            });
+            $('#restart').on('click', function() {
+                restartGame();
+            });
+        };
+
+        function randomPick() {
+            selection = ["rock", "paper", "scissors", "lizard", "spock"];
+            return selection[Math.floor(Math.random() * selection.length)];
+        };
+
+        function playerVsPlayer() {
+            updateMainMessage(p1.name + " and " + p2.name + ", click on images to make your moves!");
+            $('#restart').fadeIn(200);
+            $('.choices img').on('click', function() {
+                if (p1.pick === null) {
+                    p1.picks($(this).data('pick'));
+                } else {
+                    p2.picks($(this).data('pick'));
+                    showWinningMessage();
+                    showPicksAndWinningMessageInConsole();                  
+                    resetPlayersPicks();
+                };
+            });
+            $('#restart').on('click', function() {
+                restartGame();
+            });
+        };
+
+        function showWinningMessage() {
+            updateResultMessage(game.winningMessage());
+        };
+
+        function showPicksInConsole() {
+            console.log(p1.name + " picked: " + p1.pick);
+            console.log(p2.name + " picked: " + p2.pick);
+        };
+
+        function showWinningMessageInConsole() {
+            console.log(game.winningMessage());
+        };
+
+        function showPicksAndWinningMessageInConsole() {
+            showPicksInConsole();
+            showWinningMessageInConsole();
+        };
+
+        function restartGame() {
+            location.reload();
+        };
+
+        playGame();
+
+    </script>
+</html>
+
