@@ -1,11 +1,13 @@
 #Rock • Paper • Scissors • Lizard • Spock
 
+[![Code Climate](https://codeclimate.com/github/nadavmatalon/rock-paper-scissors-lizard-spock/badges/gpa.svg)](https://codeclimate.com/github/nadavmatalon/rock-paper-scissors-lizard-spock)
+
 ##Table of Contents
 
 * [App Screenshot](#app-screenshot)
 * [General Description](#general-description)
 * [See it Live on Github](#see-it-live-on-github)
-* [How to Run the Game Locally](#how-to-run-the-game-locally)
+* [How to Install](#how-to-install)
 * [How to Play](#how-to-play)
 * [Browsers](#browsers)
 * [Testing](#testing)
@@ -55,7 +57,7 @@ A live version of the app can be found (and played!) at:
 [Rock-Paper-Scissors-Lizard-Spock on Github.io](http://nadavmatalon.github.io/rock-paper-scissors-lizard-spock/)
 
 
-##How to Run the Game Locally
+##How to Install
 
 Clone the repo to a local folder and run the following commands in terminal:
 
@@ -117,19 +119,30 @@ Tests were written with [Rspec (3.0.3)](http://rspec.info) for the Ruby-side &
 [Jasmine (2.0.0)](http://jasmine.github.io/2.0/introduction.html) for the 
 JavaScript-side.
 
-To run the Rspec tests in terminal for the Ruby-side:
+To run the Rspec tests in terminal for the Ruby-side of 
+'Rock • Paper • Scissors' use these commands:
 
 ```bash
 $ cd rock-paper-scissors-lizard-spock/ruby
 $ rspec
 ```
 
-To run the Jasmine tests for the JavaScript-side, run:
+To run the Jasmine tests for the JavaScript-side of 
+'Rock • Paper • Scissors' use these commands:
 
 ```bash
 $ cd rock-paper-scissors-lizard-spock
 $ open ./javascript/SpecRunner.html
 ```
+
+To run the Jasmine tests for the JavaScript-side of 
+'Rock • Paper • Scissors • Lizard • Spock' use these commands:
+
+```bash
+$ cd rock-paper-scissors-lizard-spock
+$ open ./javascript/SpecRunner2.html
+```
+
 
 ##License
 
