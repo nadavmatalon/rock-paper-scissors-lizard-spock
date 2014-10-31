@@ -34,16 +34,16 @@ and consisted of the back-end logic for the game of
 in two versions: one in [Ruby](https://www.ruby-lang.org/en/), 
 and the other in [JavaScript](http://en.wikipedia.org/wiki/JavaScript).
 
-Alex's original code can be found [here](https://github.com/alexmakers/rockpaperscissors)),
+Alex's original code can be found [here](https://github.com/alexmakers/rockpaperscissors),
 whereas a refactored version of that code and tests is inluded in this repo.
 
 Building and expanding on the [JavaScript](http://en.wikipedia.org/wiki/JavaScript) version 
 of this code, the present app actualizes a more 
-sophisticated itteration of the game which includes two additional characters: 
-__the lizard__ and __Spock__ (for more info see: 
+sophisticated iteration of the game which includes two additional characters: 
+__lizard__ and __Spock__ (for more info see: 
 [Wikipedia on Rock • Paper • Scissors • Lizard • Spock](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock))
 
-The new app also gives players the option of playing in dual-mode against each other or 
+The app also gives players the option of playing in dual-mode against each other or 
 in single-mode against the supercomputer 
 [Deep Thought](http://en.wikipedia.org/wiki/Deep_Thought_(The_Hitchhiker%27s_Guide_to_the_Galaxy)#Deep_Thought).
 
@@ -89,7 +89,7 @@ http://localhost:9393/
     *  Spock __vaporizes__ Rock
     *  Rock __crushes__ Scissors
 
-(Source: [Wikipedia on Rock Paper Scissors](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock))
+(Source: [Wikipedia on Rock • Paper • Scissors • Lizard • Spock](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock))
 
 And now it's game time:
 
