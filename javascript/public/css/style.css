@@ -4,16 +4,6 @@ body {
 	background-color: white;
 }
 
-.div-special {
-	margin: auto;
-	width: 75%;
-	height: 90%;
-	border: 1px solid;
-	border-color: black;
-	box-shadow: 8px 8px 4px lightgray;
-	display: table;
-}
-
 h1 {
 	margin-top: 20px;
 }
@@ -24,11 +14,31 @@ h3 {
 	vertical-align: center;
 }
 
-.h-special {
-	padding-top: 15px;
-	padding-bottom: 15px;
+input {
+	height: 25px;
+	width: 180px;
+	font-size: 12px;
 	display: none;
-	vertical-align: center;
+	vertical-align: top;
+}
+
+button {
+	height: 40px;
+	width: 150px;
+	color: black;
+	text-align: center;
+	line-height: 12px;
+	font-size: 12px;
+	display: none;
+}
+
+button:hover {
+	height: 40px;
+	color: orange;
+	text-align: center;
+	line-height: 12px;
+	font-size: 12px;
+	display: none;
 }
 
 .main-frame {
@@ -46,28 +56,6 @@ h3 {
 	background-color: gray;
 }
 
-button {
-
-	height: 40px;
-	width: 150px;
-	color: black;
-	text-align: center;
-	line-height: 12px;
-	font-size: 12px;
-	display: none;
-}
-
-
-button:hover {
-
-	height: 40px;
-	color: orange;
-	text-align: center;
-	line-height: 12px;
-	font-size: 12px;
-	display: none;
-}
-
 #one_player {
 	width: 180px;
 }
@@ -76,18 +64,9 @@ button:hover {
 	width: 180px;
 }
 
-input {
-	height: 25px;
-	width: 180px;
-	font-size: 12px;
-	display: none;
-	vertical-align: top;
-}
-
 .framework {
 	width: 100%;
 	text-align: center;
-	/*margin-top: 2%;*/
 	padding: 20px;
 	vertical-align: center;
 }
@@ -130,6 +109,23 @@ input {
  	vertical-align: center;
 }
 
+.div-special {
+	margin: auto;
+	width: 75%;
+	height: 90%;
+	border: 1px solid;
+	border-color: black;
+	box-shadow: 8px 8px 4px lightgray;
+	display: table;
+}
+
+.h-special {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	display: none;
+	vertical-align: center;
+}
+
 .game-img {
 	opacity: 0.8;
 	border-radius: 80px;
@@ -152,7 +148,7 @@ input {
 	list-style: none;
 	vertical-align: center;
 	margin-top: 20px;
-	}
+}
 
 #results_box li {
 	background: #999;
@@ -179,7 +175,6 @@ input {
 	vertical-align: "center";
 }
 
-
 .container {
 	border: 1px solid rgb(50, 50, 50);
     text-align: center;
@@ -201,7 +196,6 @@ input {
 	vertical-align: bottom;
 }
 
-
 #powered-by > p {
 	font-size: 1.04em;
 	font-weight: 600;
@@ -215,7 +209,6 @@ input {
     float: left;
     margin-top: 17px;
     margin-left: 10px;
-
 }
 
 #written-by > a > img {
