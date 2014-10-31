@@ -19,27 +19,35 @@
 
 ##General Description
 
-This app was created as an exercise in buiding a complete 
-[JavaScript](http://en.wikipedia.org/wiki/JavaScript) web application, 
+This app was written during week 6 of the course at 
+[Makers Academy](http://www.makersacademy.com/) 
+as an exercise in buiding a  
+[JavaScript](http://en.wikipedia.org/wiki/JavaScript) web app, 
 using [jQuery](http://jquery.com) functionality and 
 [TDD](http://en.wikipedia.org/wiki/Test-driven_development) 
 methodology (tests were written with 
 [Jasmine](http://jasmine.github.io/2.0/introduction.html)). 
 
-The starting point for this project was provided by Alex Peattie (a coach at Makers) and 
-consisted of a sample code both in [Ruby](https://www.ruby-lang.org/en/) 
-and [JavaScript](http://en.wikipedia.org/wiki/JavaScript) 
-for the original game, [rock-paper-scissors](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock) 
-(Alex's code can be found [here](https://github.com/alexmakers/rockpaperscissors)).
+The starting point for this mini-project was provided by Alex Peattie (a coach at Makers) 
+and consisted of the back-end logic for the game of 
+[rock-paper-scissors](http://en.wikipedia.org/wiki/Rock-paper-scissors) written 
+in two versions: one in [Ruby](https://www.ruby-lang.org/en/), 
+and the other in [JavaScript](http://en.wikipedia.org/wiki/JavaScript).
 
-The present app actualizes a slightly more sophisticated version of the game which includes 
-two additional characters: __the lizard__ and __Spock__.
+Alex's original code can be found [here](https://github.com/alexmakers/rockpaperscissors)),
+whereas a refactored version of that code and tests is inluded in this repo.
 
-The app also gives the option of playing the game either with two players or against the 
-supercomputer [Deep Thought](http://en.wikipedia.org/wiki/Deep_Thought_(The_Hitchhiker%27s_Guide_to_the_Galaxy)#Deep_Thought).
+Building and expanding on the [JavaScript](http://en.wikipedia.org/wiki/JavaScript) version 
+of this code, the present app actualizes a more 
+sophisticated itteration of the game which includes two additional characters: 
+__the lizard__ and __Spock__ (for more info see: 
+[Wikipedia on Rock • Paper • Scissors • Lizard • Spock](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock))
+
+The new app also gives players the option of playing in dual-mode against each other or 
+in single-mode against the supercomputer 
+[Deep Thought](http://en.wikipedia.org/wiki/Deep_Thought_(The_Hitchhiker%27s_Guide_to_the_Galaxy)#Deep_Thought).
 
   
-
 ##See it Live on Github
             
 A live version of the app can be found (and played!) at:
@@ -49,11 +57,11 @@ A live version of the app can be found (and played!) at:
 
 ##How to Run the Game Locally
 
-Clone the repo to a local folder and run:
+Clone the repo to a local folder and run the following commands in terminal:
 
 ```bash
 $ cd rock-paper-scissors-lizard-spock
-$ bundle
+$ bundle install
 $ shotgun
 ```
 
@@ -85,11 +93,11 @@ http://localhost:9393/
 
 And now it's game time:
 
-* If in single player mode: simply click on an image to make your choice 
+* __Single player mode:__ simply click on an image to make your choice 
 ([Deep Thought](http://en.wikipedia.org/wiki/Deep_Thought_(The_Hitchhiker%27s_Guide_to_the_Galaxy)#Deep_Thought) 
 is very fast - it has alredy made its choice).
 
-* If in dual player mode: each player should click on an image in turn and after the 
+* __Dual player mode:__ each player should click on an image in turn and after the 
 two choice are made, the result is shown on the screen.
 
 
