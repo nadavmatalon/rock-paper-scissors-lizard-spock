@@ -1,14 +1,15 @@
 require_relative './lib/rock_paper_scissors'
 
-player1 = Player.new 'Alex'
-player2 = Player.new 'James'
+AVAILABLE_PICKS = [:rock, :paper, :scissors]
+
+player1 = Player.new 'John'
+player2 = Player.new 'Jane'
 
 game = Game.new player1, player2
 
-player1.picks :rock and player2.picks :scissors
+player1.picks AVAILABLE_PICKS.sample and player2.picks AVAILABLE_PICKS.sample
 
-if winner = game.winner
-  puts "The winner is #{winner.name}"
-else
-  puts 'DRAW!'
-end
+puts "#{player1.name} picked: #{player1.pick}"
+puts "#{player2.name} picked: #{player2.pick}"
+puts "The winner is #{game.winner}"
+
